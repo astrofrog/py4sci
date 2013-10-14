@@ -5,8 +5,6 @@ import glob
 
 from setuptools import setup, Command
 
-SERVER = os.environ["PY4SCI_SERVER"]
-USER = os.environ["PY4SCI_USER"]
 
 class BuildNotes(Command):
 
@@ -52,6 +50,31 @@ class BuildNotes(Command):
             app.output_base = notebook.replace('.ipynb', '')
             app.start()
 
+        # Make an index of all notes
+        f = open('index.html', 'w')
+        f.write("<html>\n  <body>\n")
+
+        f.write("    <h1>Lectures:</h1>\n")
+        f.write("    <ul>\n")
+        for page in glob.glob('lectures/*.html'):
+            f.write('      <li><a href="{0}">{1}</a></li>\n'.format(page, os.path.basename(page).replace('.html', '')))
+        f.write('    </ul>\n')
+
+        f.write("    <h1>Problem Sets:</h1>\n")
+        f.write("    <ul>\n")
+        for page in glob.glob('problems/*.html'):
+            f.write('      <li><a href="{0}">{1}</a></li>\n'.format(page, os.path.basename(page).replace('.html', '')))
+        f.write('    </ul>\n')
+
+        f.write("    <h1>Practice Sheets:</h1>\n")
+        f.write("    <ul>\n")
+        for page in glob.glob('practice/*.html'):
+            f.write('      <li><a href="{0}">{1}</a></li>\n'.format(page, os.path.basename(page).replace('.html', '')))
+        f.write('    </ul>\n')
+
+        f.write('  </body>\n</html>')
+        f.close()
+
 class DeployNotes(Command):
 
     user_options = []
@@ -63,6 +86,9 @@ class DeployNotes(Command):
         pass
 
     def run(self):
+
+        SERVER = os.environ["PY4SCI_SERVER"]
+        USER = os.environ["PY4SCI_USER"]
 
         import getpass
         from ftplib import FTP
@@ -77,6 +103,8 @@ class DeployNotes(Command):
                                           + glob.glob('problems/*.html')
                                           + glob.glob('practice/*.html')):
             ftp.storbinary('STOR ' + slides, open(slides, 'rb'))
+
+        ftp.storbinary('STOR index.html', open('index.html', 'rb'))
 
         ftp.quit()
 
