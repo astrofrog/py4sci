@@ -1,0 +1,40 @@
+.reveal p
+{
+  font-size: 30px;
+}
+
+.reveal li
+{
+  font-size: 30px;
+  line-height: 1.25em;
+}
+
+.reveal div.prompt
+{
+  font-size: 25px;
+}
+
+.reveal div.output_area
+{
+  font-size: 30px;
+}
+
+.reveal div.output_area pre
+{
+        padding-top: 3px;
+}
+
+.reveal .highlight
+{
+  font-size: 30px;
+}
+
+.reveal h2
+{
+  font-size: 50px;
+}
+
+.reveal h1
+{
+  font-size: 60px;
+}

@@ -24,6 +24,10 @@ class BuildNotes(Command):
 
         from IPython.nbconvert.nbconvertapp import NbConvertApp
 
+        import sys
+        for arg in range(len(sys.argv[1:])):
+            sys.argv.pop(-1)
+
         # First convert the lecture notes to slides - we have to do them
         # individually in order to be able to specify a custom output prefix for
         # each.
@@ -31,7 +35,7 @@ class BuildNotes(Command):
         app = NbConvertApp()
         app.initialize()
         app.export_format = 'slides'
-        app.template_file = 'lectures/py4sci_template.tpl'
+        app.config.Exporter.template_file = 'lectures/py4sci_template.tpl'
         for notebook in glob.glob('lectures/*.ipynb'):
             app.notebooks = [notebook]
             app.output_base = notebook.replace('.ipynb', '')
@@ -100,9 +104,16 @@ class DeployNotes(Command):
         ftp.cwd('/public_html/PY4SCI_WS_2013_14')
 
         for slides in ProgressBar.iterate(glob.glob('lectures/*.html')
+                                          + ['lectures/custom.css']
                                           + glob.glob('problems/*.html')
                                           + glob.glob('practice/*.html')):
-            ftp.storbinary('STOR ' + slides, open(slides, 'rb'))
+            try:
+                remote_size = ftp.size(slides)
+            except:
+                remote_size = None
+            local_size = os.path.getsize(slides)
+            if local_size != remote_size:
+                ftp.storbinary('STOR ' + slides, open(slides, 'rb'))
 
         ftp.storbinary('STOR index.html', open('index.html', 'rb'))
 
