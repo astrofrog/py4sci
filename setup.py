@@ -39,7 +39,8 @@ class BuildNotes(Command):
             app.output_base = notebook.replace('.ipynb', '')
             app.start()
 
-        # Now convert the lecture notes, problem sets, and practice problems to HTML notebooks.
+        # Now convert the lecture notes, problem sets, and practice problems to
+        # HTML notebooks.
 
         app = NbConvertApp()
         app.initialize()
