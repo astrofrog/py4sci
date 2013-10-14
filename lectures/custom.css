@@ -10,6 +10,11 @@
   line-height: 1.25em;
 }
 
+.reveal pre
+{
+  font-size: 25px;
+}
+
 .reveal div.prompt
 {
   font-size: 25px;
