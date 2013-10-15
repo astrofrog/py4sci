@@ -1,12 +1,14 @@
 Python - Programming for Scientists
 ===================================
 
+Please Note: this syllabus is provisional and may change during the semester.
+
 Duration: 14 weeks
 
-Practice problem solutions are only given out on the friday evening. You can
+Practice problem solutions are only given out on Friday evenings. You can
 submit these via Gist and I will comment on them, but I will not grade them.
 
-Problem Sets are graded, and should be done individually. Total of 110 points
+Problem Sets are graded and should be done individually. Total of 110 points
 to be gained from problem sets, 60% required to pass, i.e. 66 points. Solutions
 will be graded on correctness, readability, presentation, PEP8 compliance.
 
@@ -58,6 +60,8 @@ Problem Set I (2 weeks):
 Week 4
 ------
 
+No formal lecture
+
 Work on Problem Set I
 
 HAND IN PROBLEM SET I
@@ -66,7 +70,7 @@ Week 5
 ------
 
 - Introduction to Matplotlib
-- Introduction to Numpy (include masking stuff)
+- Introduction to Numpy (including masking)
 - Introduction to the IPython Notebook. From now on, all problem sets handed in
   via IPython notebook!
 
@@ -77,10 +81,12 @@ Practice:
 
 Problem Set II (3 weeks):
   - Kepler transit lightcurve lightcurve extraction/analysis
-    [requires glob, files, numpy, plotting]. Include a fitting component that they can only do in Week 7.
+    [requires glob, files, numpy, plotting, fitting]
 
 Week 6
 ------
+
+- Reading and handling exceptions
 
 Work on Problem Set II
 
@@ -107,6 +113,8 @@ Problem Set III (3 weeks):
 
 Week 9
 ------
+
+No formal lecture
 
 Work on Problem Set III
 
@@ -138,10 +146,14 @@ Problem Set IV (3 weeks):
 Week 12
 -------
 
+No formal lecture
+
 Work on Problem Set IV
 
 Week 13
 -------
+
+No formal lecture
 
 Work on Problem Set IV
 
