@@ -105,9 +105,9 @@ class DeployNotes(Command):
 
         for slides in ProgressBar.iterate(glob.glob('lectures/*.html')
                                           + ['lectures/custom.css']
+                                          + glob.glob('problems/data/*')
                                           + glob.glob('problems/*.html')
-                                          + glob.glob('problems/*.txt')
-                                          + glob.glob('problems/*.fasta')
+                                          + glob.glob('practice/data/*')
                                           + glob.glob('practice/*.html')):
             try:
                 remote_size = ftp.size(slides)
