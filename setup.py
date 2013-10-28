@@ -122,4 +122,33 @@ class DeployNotes(Command):
         ftp.quit()
 
 
-setup(name='py4sci', cmdclass={'build': BuildNotes, 'deploy':DeployNotes})
+class RunNotes(Command):
+
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+
+        # Now convert the lecture notes, problem sets, and practice problems to
+        # HTML notebooks.
+
+        from runipy.notebook_runner import NotebookRunner
+
+        start_dir = os.path.abspath('.')
+
+        for notebook in (glob.glob('lectures/*.ipynb')
+                        + glob.glob('problems/*.ipynb')
+                        + glob.glob('practice/*.ipynb')):
+            os.chdir(os.path.dirname(notebook))
+            r = NotebookRunner(os.path.basename(notebook))
+            r.run_notebook(skip_exceptions=True)
+            r.save_notebook(os.path.basename(notebook))
+            os.chdir(start_dir)
+
+
+setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes})
