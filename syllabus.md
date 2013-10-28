@@ -45,9 +45,8 @@ Week 3
 - Introduction to os.path and glob
 
 Practice:
-  - Randomly sample normal numbers, make histogram, overplot gaussian
-  - Sample values from a dice and make plot. Roll dice multiple times and
-    demonstrate the central limit theorem.
+  - Modify file reading example to use dictionary
+  - Read in Munich temperature data, print out yearly and monthly averages.
 
 Problem Set I (2 weeks):
   - Bio-informatics problem - fun with DNA. The idea is to read in a gene
