@@ -78,13 +78,14 @@ Practice:
 
 Problem Set II (3 weeks):
   - Kepler transit lightcurve lightcurve extraction/analysis
-    [requires glob, files, numpy, plotting, fitting]
+    [requires glob, files, numpy, plotting]
 
 Week 6
 ------
 
 - Introduction to the IPython Notebook. From now on, all problem sets handed in
   via IPython notebook!
+- Glob
 
 Work on Problem Set II
 
