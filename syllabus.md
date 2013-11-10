@@ -76,10 +76,6 @@ Practice:
     includes bad values that need to be masked.
   - Monte-Carlo error propagation (gets tested in RV problem set later)
 
-Problem Set II (3 weeks):
-  - Kepler transit lightcurve lightcurve extraction/analysis
-    [requires glob, files, numpy, plotting]
-
 Week 6
 ------
 
@@ -87,7 +83,9 @@ Week 6
   via IPython notebook!
 - Glob
 
-Work on Problem Set II
+Problem Set II (3 weeks):
+  - Kepler transit lightcurve lightcurve extraction/analysis
+    [requires glob, files, numpy, plotting]
 
 Week 7
 ------
