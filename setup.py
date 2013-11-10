@@ -103,7 +103,8 @@ class DeployNotes(Command):
 
         ftp.cwd('/public_html/PY4SCI_WS_2013_14')
 
-        for slides in ProgressBar.iterate(glob.glob('lectures/*.html')
+        for slides in ProgressBar.iterate(glob.glob('lectures/data/*')
+                                          + glob.glob('lectures/*.html')
                                           + ['lectures/custom.css']
                                           + glob.glob('problems/data/*')
                                           + glob.glob('problems/*.html')
