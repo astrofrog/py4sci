@@ -70,8 +70,6 @@ Week 5
 
 - Introduction to Matplotlib
 - Introduction to Numpy (including masking)
-- Introduction to the IPython Notebook. From now on, all problem sets handed in
-  via IPython notebook!
 
 Practice:
   - Read in data of temperature in Munich vs time, make simple plot. The data
@@ -85,7 +83,8 @@ Problem Set II (3 weeks):
 Week 6
 ------
 
-- Reading and handling exceptions
+- Introduction to the IPython Notebook. From now on, all problem sets handed in
+  via IPython notebook!
 
 Work on Problem Set II
 
@@ -145,6 +144,8 @@ Problem Set IV (3 weeks):
 Week 12
 -------
 
+- Reading and handling exceptions
+
 No formal lecture
 
 Work on Problem Set IV
@@ -152,7 +153,7 @@ Work on Problem Set IV
 Week 13
 -------
 
-No formal lecture
+- Testing
 
 Work on Problem Set IV
 
