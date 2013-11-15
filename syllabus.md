@@ -81,7 +81,6 @@ Week 6
 
 - Introduction to the IPython Notebook. From now on, all problem sets handed in
   via IPython notebook!
-- Glob
 
 Problem Set II (3 weeks):
   - Kepler transit lightcurve lightcurve extraction/analysis
@@ -90,7 +89,8 @@ Problem Set II (3 weeks):
 Week 7
 ------
 
-- Scipy (interpolation, integration, fitting)
+- Glob
+- String formatting
 
 Practice:
   - Fit the temperature in Munich vs time data with some functions.
@@ -103,7 +103,7 @@ HAND IN PROBLEM SET II
 Week 8
 ------
 
-- String formatting
+- Scipy (interpolation, integration, fitting)
 
 Problem Set III (3 weeks):
   - Arctic ice maps (requires plotting, numpy, glob, string formatting)
