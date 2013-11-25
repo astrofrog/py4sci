@@ -92,10 +92,6 @@ Week 7
 - Glob
 - String formatting
 
-Practice:
-  - Fit the temperature in Munich vs time data with some functions.
-  - Fit data showing radioactive decay (fitting for half-life)
-
 Work on Problem Set II
 
 HAND IN PROBLEM SET II
@@ -104,6 +100,10 @@ Week 8
 ------
 
 - Scipy (interpolation, integration, fitting)
+
+Practice:
+  - Fit the temperature in Munich vs time data with some functions.
+  - Fit data showing radioactive decay (fitting for half-life)
 
 Problem Set III (3 weeks):
   - Arctic ice maps (requires plotting, numpy, glob, string formatting)
