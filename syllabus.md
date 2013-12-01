@@ -105,15 +105,13 @@ Practice:
   - Fit the temperature in Munich vs time data with some functions.
   - Fit data showing radioactive decay (fitting for half-life)
 
-Problem Set III (3 weeks):
-  - Arctic ice maps (requires plotting, numpy, glob, string formatting)
-
 Week 9
 ------
 
 No formal lecture
 
-Work on Problem Set III
+Problem Set III (3 weeks):
+  - Arctic ice maps (requires plotting, numpy, glob, string formatting)
 
 Week 10
 ------
