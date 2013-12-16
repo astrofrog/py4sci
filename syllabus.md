@@ -108,7 +108,7 @@ Practice:
 Week 9
 ------
 
-No formal lecture
+- Re-cap how to use IPython notebook
 
 Problem Set III (3 weeks):
   - Arctic ice maps (requires plotting, numpy, glob, string formatting)
