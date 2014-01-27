@@ -128,7 +128,7 @@ HAND IN PROBLEM SET III
 Week 11
 ------
 
-- Accessing remote resources
+- Reading and handling exceptions
 
 Practice:
   - Try and retrieve online data. Parse webpage and extract some data.
@@ -141,7 +141,7 @@ Problem Set IV (3 weeks):
 Week 12
 -------
 
-- Reading and handling exceptions
+- Accessing remote resources
 
 No formal lecture
 
@@ -150,19 +150,19 @@ Work on Problem Set IV
 Week 13
 -------
 
-- Testing
-
-Work on Problem Set IV
-
-HAND IN PROBLEM SET IV
-  
-Week 14
--------
-
 - Object-oriented programming
 
 Practice:
   - Write classes to represent various particles
+
+Work on Problem Set IV
+
+HAND IN PROBLEM SET IV
+
+Week 14
+-------
+
+NO LECTURE
 
 Misc Resources
 --------------
