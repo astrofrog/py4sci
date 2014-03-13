@@ -5,6 +5,82 @@ import glob
 
 from setuptools import setup, Command
 
+import string
+
+
+def strip_punctuation(text):
+    return ''.join(ch for ch in text if ch not in string.punctuation)
+
+class BuildTOC(Command):
+
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+
+        from IPython.nbformat.current import read, write
+
+        with open('template.rst', 'r') as f:
+            template = f.read()
+
+        toc = ""
+
+        from urllib import quote
+
+        for notebook in (glob.glob('lectures/*.ipynb')
+                        + glob.glob('problems/*.ipynb')
+                        + glob.glob('practice/*.ipynb')):
+
+            with open(notebook, 'r') as f:
+                nb = read(f, 'json')
+
+            for ws in nb.worksheets:
+                for cell in ws.cells:
+                    if cell.cell_type == 'heading':
+                        if cell['level'] > 2:
+                            continue
+                        toc += ("   " * (cell['level'] - 1) +
+                                "* `{0} <_static/{1}.html#{2}>`__\n".format(cell['source'].replace('`', ''),
+                                                                            quote(os.path.basename(notebook)).replace('.ipynb', ''),
+                                                                            strip_punctuation(cell['source']).replace(' ', '-')))
+
+        with open('www/index.rst', 'w') as f:
+            f.write(template.format(notebook_toc=toc))
+
+class ClearOutput(Command):
+
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+
+        from IPython.nbformat.current import read, write
+
+        for notebook in (glob.glob('lectures/*.ipynb')
+                        + glob.glob('problems/*.ipynb')
+                        + glob.glob('practice/*.ipynb')):
+
+            with open(notebook, 'r') as f:
+                nb = read(f, 'json')
+
+            for ws in nb.worksheets:
+                for cell in ws.cells:
+                    if cell.cell_type == 'code':
+                        cell.outputs = []
+
+            with open(notebook, 'w') as f:
+                write(nb, f, 'json')
+
 
 class BuildNotes(Command):
 
@@ -38,7 +114,7 @@ class BuildNotes(Command):
         app.config.Exporter.template_file = 'lectures/py4sci_template.tpl'
         for notebook in glob.glob('lectures/*.ipynb'):
             app.notebooks = [notebook]
-            app.output_base = notebook.replace('.ipynb', '')
+            app.output_base = os.path.join('www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
             app.start()
 
         # Now convert the lecture notes, problem sets, and practice problems to
@@ -51,33 +127,9 @@ class BuildNotes(Command):
                         + glob.glob('problems/*.ipynb')
                         + glob.glob('practice/*.ipynb')):
             app.notebooks = [notebook]
-            app.output_base = notebook.replace('.ipynb', '')
+            app.output_base = os.path.join('www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
             app.start()
 
-        # Make an index of all notes
-        f = open('index.html', 'w')
-        f.write("<html>\n  <body>\n")
-
-        f.write("    <h1>Lectures:</h1>\n")
-        f.write("    <ul>\n")
-        for page in glob.glob('lectures/*.html'):
-            f.write('      <li><a href="{0}">{1}</a></li>\n'.format(page, os.path.basename(page).replace('.html', '')))
-        f.write('    </ul>\n')
-
-        f.write("    <h1>Problem Sets:</h1>\n")
-        f.write("    <ul>\n")
-        for page in glob.glob('problems/*.html'):
-            f.write('      <li><a href="{0}">{1}</a></li>\n'.format(page, os.path.basename(page).replace('.html', '')))
-        f.write('    </ul>\n')
-
-        f.write("    <h1>Practice Sheets:</h1>\n")
-        f.write("    <ul>\n")
-        for page in glob.glob('practice/*.html'):
-            f.write('      <li><a href="{0}">{1}</a></li>\n'.format(page, os.path.basename(page).replace('.html', '')))
-        f.write('    </ul>\n')
-
-        f.write('  </body>\n</html>')
-        f.close()
 
 class DeployNotes(Command):
 
@@ -154,4 +206,4 @@ class RunNotes(Command):
             os.chdir(start_dir)
 
 
-setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes})
+setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes, 'clear':ClearOutput, 'toc': BuildTOC})
