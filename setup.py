@@ -32,9 +32,7 @@ class BuildTOC(Command):
 
         from urllib import quote
 
-        for notebook in (glob.glob('lectures/*.ipynb')
-                        + glob.glob('problems/*.ipynb')
-                        + glob.glob('practice/*.ipynb')):
+        for notebook in (glob.glob('lectures/*.ipynb')):
 
             with open(notebook, 'r') as f:
                 nb = read(f, 'json')
@@ -50,7 +48,7 @@ class BuildTOC(Command):
                                                                             strip_punctuation(cell['source']).replace(' ', '-')))
 
         with open('www/index.rst', 'w') as f:
-            f.write(template.format(notebook_toc=toc))
+            f.write(template.format(lectures_toc=toc))
 
 class ClearOutput(Command):
 
