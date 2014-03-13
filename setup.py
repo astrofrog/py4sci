@@ -145,6 +145,8 @@ class RunNotes(Command):
         for notebook in (glob.glob('lectures/*.ipynb')
                         + glob.glob('problems/*.ipynb')
                         + glob.glob('practice/*.ipynb')):
+            if "Understanding" in notebook:
+                continue
             os.chdir(os.path.dirname(notebook))
             r = NotebookRunner(os.path.basename(notebook), pylab=True)
             r.run_notebook(skip_exceptions=True)
