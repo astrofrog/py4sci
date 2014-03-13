@@ -1589,7 +1589,7 @@ pre {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Interpolation-and-Integration">Interpolation and Integration<a class="anchor-link" href="#Interpolation-and-Integration">&#182;</a></h1>
+<h1 id="Introduction-to-Scipy:-Interpolation-and-Integration">Introduction to Scipy: Interpolation and Integration<a class="anchor-link" href="#Introduction-to-Scipy:-Interpolation-and-Integration">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -1701,6 +1701,25 @@ In&nbsp;[4]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[4]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array(2.0)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell">
 <div class="input">
@@ -1710,6 +1729,25 @@ In&nbsp;[5]:
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="mf">3.3</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[5]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array(2.7)
+</pre>
+
+</div>
+</div>
 
 </div>
 </div>
@@ -1736,6 +1774,25 @@ In&nbsp;[6]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[6]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([ 2.  ,  3.75,  3.25,  2.5 ])
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="input">
 <div class="prompt input_prompt">
@@ -1754,6 +1811,46 @@ In&nbsp;[7]:
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">ValueError</span>                                Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-7-3ff19066e54c&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>f<span class="ansiblue">(</span><span class="ansiblue">-</span><span class="ansicyan">1.</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansigreen">/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/interpolate/polyint.pyc</span> in <span class="ansicyan">__call__</span><span class="ansiblue">(self, x)</span>
+<span class="ansigreen">     52</span>         &quot;&quot;&quot;
+<span class="ansigreen">     53</span>         x<span class="ansiblue">,</span> x_shape <span class="ansiblue">=</span> self<span class="ansiblue">.</span>_prepare_x<span class="ansiblue">(</span>x<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">---&gt; 54</span><span class="ansired">         </span>y <span class="ansiblue">=</span> self<span class="ansiblue">.</span>_evaluate<span class="ansiblue">(</span>x<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">     55</span>         <span class="ansigreen">return</span> self<span class="ansiblue">.</span>_finish_y<span class="ansiblue">(</span>y<span class="ansiblue">,</span> x_shape<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">     56</span> <span class="ansiblue"></span>
+
+<span class="ansigreen">/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/interpolate/interpolate.pyc</span> in <span class="ansicyan">_evaluate</span><span class="ansiblue">(self, x_new)</span>
+<span class="ansigreen">    446</span>         <span class="ansired">#    The behavior is set by the bounds_error variable.</span><span class="ansiblue"></span><span class="ansiblue"></span>
+<span class="ansigreen">    447</span>         x_new <span class="ansiblue">=</span> asarray<span class="ansiblue">(</span>x_new<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">--&gt; 448</span><span class="ansired">         </span>out_of_bounds <span class="ansiblue">=</span> self<span class="ansiblue">.</span>_check_bounds<span class="ansiblue">(</span>x_new<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">    449</span>         y_new <span class="ansiblue">=</span> self<span class="ansiblue">.</span>_call<span class="ansiblue">(</span>self<span class="ansiblue">,</span> x_new<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">    450</span>         <span class="ansigreen">if</span> len<span class="ansiblue">(</span>y_new<span class="ansiblue">)</span> <span class="ansiblue">&gt;</span> <span class="ansicyan">0</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+
+<span class="ansigreen">/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy/interpolate/interpolate.pyc</span> in <span class="ansicyan">_check_bounds</span><span class="ansiblue">(self, x_new)</span>
+<span class="ansigreen">    473</span>         <span class="ansired"># !! Could provide more information about which values are out of bounds</span><span class="ansiblue"></span><span class="ansiblue"></span>
+<span class="ansigreen">    474</span>         <span class="ansigreen">if</span> self<span class="ansiblue">.</span>bounds_error <span class="ansigreen">and</span> below_bounds<span class="ansiblue">.</span>any<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+<span class="ansigreen">--&gt; 475</span><span class="ansired">             raise ValueError(&quot;A value in x_new is below the interpolation &quot;
+</span><span class="ansigreen">    476</span>                 &quot;range.&quot;)
+<span class="ansigreen">    477</span>         <span class="ansigreen">if</span> self<span class="ansiblue">.</span>bounds_error <span class="ansigreen">and</span> above_bounds<span class="ansiblue">.</span>any<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+
+<span class="ansired">ValueError</span>: A value in x_new is below the interpolation range.</pre>
+</div>
+</div>
 
 </div>
 </div>
@@ -1793,6 +1890,25 @@ In&nbsp;[9]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[9]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array(-10.0)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell">
 <div class="input">
@@ -1802,6 +1918,25 @@ In&nbsp;[10]:
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]))</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[10]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array([-10.,   4.,   3., -10.])
+</pre>
+
+</div>
+</div>
 
 </div>
 </div>
@@ -1825,6 +1960,25 @@ In&nbsp;[11]:
 <div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">&#39;cubic&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[11]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+array(2.583333333333333)
+</pre>
+
+</div>
+</div>
 
 </div>
 </div>
@@ -1903,6 +2057,22 @@ In&nbsp;[13]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(10.999999999999998, 1.221245327087672e-13)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="input">
 <div class="prompt input_prompt">
@@ -1958,6 +2128,22 @@ In&nbsp;[15]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+11.0000000005
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="input">
 <div class="prompt input_prompt">
@@ -1986,6 +2172,22 @@ In&nbsp;[16]:
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">trapz</span>
 <span class="k">print</span> <span class="n">trapz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+11.000000501
+
+</pre>
+</div>
+</div>
 
 </div>
 </div>

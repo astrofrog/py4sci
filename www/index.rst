@@ -20,7 +20,7 @@ Monday
 ^^^^^^
 
 * `Running Python code <_static/02.%20How%20to%20run%20Python%20code.html>`_
-* `Basic Types <_static/03.%20Numbers%2C%20String%2C%20and%20Lists.html>`_
+* `Numbers, Strings, and Lists <_static/03.%20Numbers%2C%20String%2C%20and%20Lists.html>`_
 * `Booleans, Tuples, and Dictionaries <_static/04.%20Booleans%2C%20Tuples%2C%20and%2C%20Dictionaries.html>`_
 * `Control Flow <_static/05.%20Control%20Flow.html>`_
 * `Functions <_static/06.%20Functions.html>`_
@@ -44,8 +44,8 @@ Thursday
 ^^^^^^^^
 
 * `Python variables - behind the scenes <_static/14.%20Python%20variables%20-%20benind%20the%20scenes.html>`_
-* `Fitting data <_static/15.%20Fitting%20models%20to%20data.html>`_
-* `Interpolation and Integration <_static/16.%20Interpolation%20and%20Integration.html>`_
+* `Introduction to Scipy: Fitting data <_static/15.%20Fitting%20models%20to%20data.html>`_
+* `Introduction to Scipy: Interpolation and Integration <_static/16.%20Interpolation%20and%20Integration.html>`_
 * `Understanding Python Errors <_static/17.%20Understanding%20Python%20errors.html>`_
 
 Friday

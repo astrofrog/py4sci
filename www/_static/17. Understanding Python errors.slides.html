@@ -1663,6 +1663,26 @@ In&nbsp;[1]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-1-07a9845b0745&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      1</span> s <span class="ansiblue">=</span> <span class="ansiblue">&apos;hello&apos;</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 2</span><span class="ansired"> </span>s<span class="ansiblue">[</span><span class="ansicyan">0</span><span class="ansiblue">]</span> <span class="ansiblue">=</span> <span class="ansiblue">&apos;a&apos;</span><span class="ansiblue"></span>
+
+<span class="ansired">TypeError</span>: &apos;str&apos; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="input">
 <div class="prompt input_prompt">
@@ -1704,6 +1724,38 @@ In&nbsp;[3]:
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="n">subtract_smooth</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]))</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">ValueError</span>                                Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-3-7bd1930fb255&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>subtract_smooth<span class="ansiblue">(</span>np<span class="ansiblue">.</span>array<span class="ansiblue">(</span><span class="ansiblue">[</span><span class="ansicyan">1</span><span class="ansiblue">,</span><span class="ansicyan">2</span><span class="ansiblue">,</span><span class="ansicyan">3</span><span class="ansiblue">,</span><span class="ansicyan">4</span><span class="ansiblue">,</span><span class="ansicyan">5</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue">,</span>np<span class="ansiblue">.</span>array<span class="ansiblue">(</span><span class="ansiblue">[</span><span class="ansicyan">4</span><span class="ansiblue">,</span><span class="ansicyan">5</span><span class="ansiblue">,</span><span class="ansicyan">6</span><span class="ansiblue">,</span><span class="ansicyan">8</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansigreen">&lt;ipython-input-2-4b1062b3783d&gt;</span> in <span class="ansicyan">subtract_smooth</span><span class="ansiblue">(x, y)</span>
+<span class="ansigreen">      1</span> <span class="ansigreen">def</span> subtract_smooth<span class="ansiblue">(</span>x<span class="ansiblue">,</span> y<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 2</span><span class="ansired">     </span>y_new <span class="ansiblue">=</span> y <span class="ansiblue">-</span> median_filter<span class="ansiblue">(</span>x<span class="ansiblue">,</span> y<span class="ansiblue">,</span> <span class="ansicyan">1.</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">      3</span>     <span class="ansigreen">return</span> y_new<span class="ansiblue"></span>
+<span class="ansigreen">      4</span> <span class="ansiblue"></span>
+<span class="ansigreen">      5</span> <span class="ansigreen">def</span> median_filter<span class="ansiblue">(</span>x<span class="ansiblue">,</span> y<span class="ansiblue">,</span> width<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+
+<span class="ansigreen">&lt;ipython-input-2-4b1062b3783d&gt;</span> in <span class="ansicyan">median_filter</span><span class="ansiblue">(x, y, width)</span>
+<span class="ansigreen">      6</span>     y_new <span class="ansiblue">=</span> np<span class="ansiblue">.</span>zeros<span class="ansiblue">(</span>y<span class="ansiblue">.</span>shape<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">      7</span>     <span class="ansigreen">for</span> i <span class="ansigreen">in</span> range<span class="ansiblue">(</span>len<span class="ansiblue">(</span>x<span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 8</span><span class="ansired">         </span>y_new<span class="ansiblue">[</span>i<span class="ansiblue">]</span> <span class="ansiblue">=</span> np<span class="ansiblue">.</span>median<span class="ansiblue">(</span>y<span class="ansiblue">[</span>np<span class="ansiblue">.</span>abs<span class="ansiblue">(</span>x <span class="ansiblue">-</span> x<span class="ansiblue">[</span>i<span class="ansiblue">]</span><span class="ansiblue">)</span> <span class="ansiblue">&lt;</span> width <span class="ansiblue">*</span> <span class="ansicyan">0.5</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">      9</span>     <span class="ansigreen">return</span> y_new<span class="ansiblue"></span>
+
+<span class="ansired">ValueError</span>: too many boolean indices</pre>
+</div>
+</div>
 
 </div>
 </div>
@@ -1773,6 +1825,38 @@ In&nbsp;[4]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">ValueError</span>                                Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-4-7bd1930fb255&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>subtract_smooth<span class="ansiblue">(</span>np<span class="ansiblue">.</span>array<span class="ansiblue">(</span><span class="ansiblue">[</span><span class="ansicyan">1</span><span class="ansiblue">,</span><span class="ansicyan">2</span><span class="ansiblue">,</span><span class="ansicyan">3</span><span class="ansiblue">,</span><span class="ansicyan">4</span><span class="ansiblue">,</span><span class="ansicyan">5</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue">,</span>np<span class="ansiblue">.</span>array<span class="ansiblue">(</span><span class="ansiblue">[</span><span class="ansicyan">4</span><span class="ansiblue">,</span><span class="ansicyan">5</span><span class="ansiblue">,</span><span class="ansicyan">6</span><span class="ansiblue">,</span><span class="ansicyan">8</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansigreen">&lt;ipython-input-2-4b1062b3783d&gt;</span> in <span class="ansicyan">subtract_smooth</span><span class="ansiblue">(x, y)</span>
+<span class="ansigreen">      1</span> <span class="ansigreen">def</span> subtract_smooth<span class="ansiblue">(</span>x<span class="ansiblue">,</span> y<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 2</span><span class="ansired">     </span>y_new <span class="ansiblue">=</span> y <span class="ansiblue">-</span> median_filter<span class="ansiblue">(</span>x<span class="ansiblue">,</span> y<span class="ansiblue">,</span> <span class="ansicyan">1.</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">      3</span>     <span class="ansigreen">return</span> y_new<span class="ansiblue"></span>
+<span class="ansigreen">      4</span> <span class="ansiblue"></span>
+<span class="ansigreen">      5</span> <span class="ansigreen">def</span> median_filter<span class="ansiblue">(</span>x<span class="ansiblue">,</span> y<span class="ansiblue">,</span> width<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+
+<span class="ansigreen">&lt;ipython-input-2-4b1062b3783d&gt;</span> in <span class="ansicyan">median_filter</span><span class="ansiblue">(x, y, width)</span>
+<span class="ansigreen">      6</span>     y_new <span class="ansiblue">=</span> np<span class="ansiblue">.</span>zeros<span class="ansiblue">(</span>y<span class="ansiblue">.</span>shape<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">      7</span>     <span class="ansigreen">for</span> i <span class="ansigreen">in</span> range<span class="ansiblue">(</span>len<span class="ansiblue">(</span>x<span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 8</span><span class="ansired">         </span>y_new<span class="ansiblue">[</span>i<span class="ansiblue">]</span> <span class="ansiblue">=</span> np<span class="ansiblue">.</span>median<span class="ansiblue">(</span>y<span class="ansiblue">[</span>np<span class="ansiblue">.</span>abs<span class="ansiblue">(</span>x <span class="ansiblue">-</span> x<span class="ansiblue">[</span>i<span class="ansiblue">]</span><span class="ansiblue">)</span> <span class="ansiblue">&lt;</span> width <span class="ansiblue">*</span> <span class="ansicyan">0.5</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">      9</span>     <span class="ansigreen">return</span> y_new<span class="ansiblue"></span>
+
+<span class="ansired">ValueError</span>: too many boolean indices</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell">
 <div class="input">
@@ -1782,6 +1866,33 @@ In&nbsp;[5]:
 <div class="input_area box-flex1">
 <div class="highlight"><pre><span class="o">%</span><span class="k">debug</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+&gt; <span class="ansigreen">&lt;ipython-input-2-4b1062b3783d&gt;</span>(8)<span class="ansicyan">median_filter</span><span class="ansiblue">()</span>
+<span class="ansigreen">      7 </span><span class="ansired">    </span><span class="ansigreen">for</span> i <span class="ansigreen">in</span> range<span class="ansiblue">(</span>len<span class="ansiblue">(</span>x<span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 8 </span><span class="ansired">        </span>y_new<span class="ansiblue">[</span>i<span class="ansiblue">]</span> <span class="ansiblue">=</span> np<span class="ansiblue">.</span>median<span class="ansiblue">(</span>y<span class="ansiblue">[</span>np<span class="ansiblue">.</span>abs<span class="ansiblue">(</span>x <span class="ansiblue">-</span> x<span class="ansiblue">[</span>i<span class="ansiblue">]</span><span class="ansiblue">)</span> <span class="ansiblue">&lt;</span> width <span class="ansiblue">*</span> <span class="ansicyan">0.5</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">      9 </span><span class="ansired">    </span><span class="ansigreen">return</span> y_new<span class="ansiblue"></span>
+
+ipdb&gt; print x
+[1 2 3 4 5]
+ipdb&gt; print np.abs(x - x[i]) &lt; width * 0.5
+[ True False False False False]
+ipdb&gt; print y
+[4 5 6 8]
+ipdb&gt; exit
+
+</pre>
+</div>
+</div>
 
 </div>
 </div>
@@ -1840,6 +1951,25 @@ In&nbsp;[6]:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-6-c4127d7f42a9&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>s<span class="ansiblue">[</span><span class="ansicyan">1</span><span class="ansiblue">]</span> <span class="ansiblue">=</span> <span class="ansiblue">&apos;a&apos;</span><span class="ansiblue"></span>
+
+<span class="ansired">TypeError</span>: &apos;str&apos; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell">
 <div class="input">
@@ -1852,6 +1982,22 @@ In&nbsp;[7]:
 <span class="k">except</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">&quot;Can&#39;t set s[1]&quot;</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Can&apos;t set s[1]
+
+</pre>
+</div>
+</div>
 
 </div>
 </div>
@@ -1877,6 +2023,22 @@ In&nbsp;[8]:
 <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">&quot;Can&#39;t set s[1]&quot;</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Can&apos;t set s[1]
+
+</pre>
+</div>
+</div>
 
 </div>
 </div>

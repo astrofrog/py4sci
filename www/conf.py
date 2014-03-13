@@ -43,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Python: Programming for Scientists'
+project = u'Python for Scientists'
 copyright = u'2014, Thomas P. Robitaille'
 
 # The version info for the project you're documenting, acts as replacement for
