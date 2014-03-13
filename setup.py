@@ -42,7 +42,7 @@ class BuildTOC(Command):
             for ws in nb.worksheets:
                 for cell in ws.cells:
                     if cell.cell_type == 'heading':
-                        if cell['level'] > 2:
+                        if cell['level'] > 1:
                             continue
                         toc += ("   " * (cell['level'] - 1) +
                                 "* `{0} <_static/{1}.html#{2}>`__\n".format(cell['source'].replace('`', ''),
