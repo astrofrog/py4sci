@@ -2,6 +2,7 @@
 
 import os
 import glob
+import shutil
 
 from setuptools import setup, Command
 
@@ -10,6 +11,7 @@ import string
 
 def strip_punctuation(text):
     return ''.join(ch for ch in text if ch not in string.punctuation)
+
 
 class BuildTOC(Command):
 
@@ -50,7 +52,7 @@ class BuildTOC(Command):
         with open('www/index.rst', 'w') as f:
             f.write(template.format(lectures_toc=toc))
 
-class ClearOutput(Command):
+class LiveVersion(Command):
 
     user_options = []
 
@@ -61,6 +63,10 @@ class ClearOutput(Command):
         pass
 
     def run(self):
+
+        if os.path.exists('live_version'):
+            shutil.rmtree('live_version')
+        os.mkdir('live_version')
 
         from IPython.nbformat.current import read, write
 
@@ -76,7 +82,7 @@ class ClearOutput(Command):
                     if cell.cell_type == 'code':
                         cell.outputs = []
 
-            with open(notebook, 'w') as f:
+            with open(os.path.join('live_version', os.path.basename(notebook)), 'w') as f:
                 write(nb, f, 'json')
 
 
@@ -204,4 +210,4 @@ class RunNotes(Command):
             os.chdir(start_dir)
 
 
-setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes, 'clear':ClearOutput, 'toc': BuildTOC})
+setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes, 'live':LiveVersion, 'toc': BuildTOC})
