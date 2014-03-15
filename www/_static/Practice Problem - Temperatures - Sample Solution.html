@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Problem Set 2</title>
+<title>Practice Problem - Temperatures - Sample Solution</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -1683,7 +1683,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Problem-Set-2---Arctic-ice-maps">Problem Set 2 - Arctic ice maps<a class="anchor-link" href="#Problem-Set-2---Arctic-ice-maps">&#182;</a></h1>
+<h1 id="Practice-Problem---Temperatures---Sample-Solution">Practice Problem - Temperatures - Sample Solution<a class="anchor-link" href="#Practice-Problem---Temperatures---Sample-Solution">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -1693,132 +1693,363 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Total points:</strong> 30</p>
-<p><strong>Due:</strong> Thursday 20th 18:00</p>
-<p><strong>Format:</strong> IPython Notebook</p>
+<p>First we read in the data:</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
+In&nbsp;[1]:
 </div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The purpose of this problem set is to become familiar with working with image data, plotting it, and combining it in various ways for analysis.</p>
-<p>The data used in this problem set was collected by the AMSR-E instrument <a href="http://en.wikipedia.org/wiki/Aqua_(satellite)">Aqua</a> satellite. The data consists of maps of the concentration of ice in the Arctic collected between 2006 and 2011. I have downloaded and extracted the maps from <a href="http://www.iup.uni-bremen.de/seaice/amsr/">here</a> and have put them in a format that you can more easily used (if you are interested in using the raw data directly, let me know and I can show you).</p>
-<p>The data you should use can be downloaded from <a href="data/ice_data.tgz">here</a> and can also be accessed in <code>/local/py4sci/ice_data</code> if you are using the CIP computers. This is actually a subset of the data, with only two ice maps every month, but let me know if you are interested in getting the full dataset.</p>
-<p>The data is in 'Numpy' format, which means that you can read it as a Numpy array using:</p>
-<pre><code>&gt;&gt;&gt; import numpy as np
-&gt;&gt;&gt; data = np.load(&#39;ice_data/20080415.npy&#39;)</code></pre>
-<p>which will give you a 2-d array. Just for information, this was created with:</p>
-<pre><code>&gt;&gt;&gt; np.save(&#39;ice_data/20080415.npy&#39;, data)</code></pre>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-1---examining-a-single-map-(6-points)">Part 1 - examining a single map (6 points)<a class="anchor-link" href="#Part-1---examining-a-single-map-(6-points)">&#182;</a></h2>
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">days</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">temperatures</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;data/munich_temperatures_average.txt&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">):</span>
+    
+    <span class="n">day</span><span class="p">,</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    
+    <span class="c"># day and temperature are strings so we need to convert them</span>
+    <span class="c"># when we append them to the lists</span>
+    <span class="n">days</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
+    <span class="n">temperatures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">temperature</span><span class="p">))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Start off by reading in one of the maps as shown above, and plot it with Matplotlib</strong>. Note that to get the correct orientation, you will need to call the <code>imshow</code> command with the <code>origin='lower'</code> option, which ensures that the (0,0) pixels is on the bottom left, not the top left. You can try and use different colormaps if you like (set by the <code>cmap</code> option) - see <a href="http://www.scipy.org/Cookbook/Matplotlib/Show_colormaps">here</a> for information on the available colormaps. You can specify a colormap to use with e.g. <code>cmap=plt.cm.jet</code> (i.e. <code>cmap=plt.cm.</code> followed by the name of the colormap). Note that you can make figures larger by specifying e.g.</p>
-<pre><code>&gt;&gt;&gt; plt.figure(figsize=(8,8))</code></pre>
-<p>where the size is given in inches. Try and find a way to plot a colorbar on the side, to show what color corresponds to what value. Remember that you can always look at the examples in the <a href="http://matplotlib.org/gallery.html">Matplotlib Gallery</a> to find examples. You can also try and remove the tick labels (<code>100</code>, <code>200</code>, etc.) since they are not useful - but don't worry if you can't figure out how.</p>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-2---reading-in-multiple-maps-(10-points)">Part 2 - reading in multiple maps (10 points)<a class="anchor-link" href="#Part-2---reading-in-multiple-maps-(10-points)">&#182;</a></h2>
+<p>Now that the data has been read into two lists, we can loop through and split up the temperatures by year:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">yearly_temperatures</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">days</span><span class="p">)):</span>
+    
+    <span class="c"># Find the year (as an integer)</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">days</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="c"># If the key doesn&#39;t exist in the dictionary, create it</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">yearly_temperatures</span><span class="p">:</span>
+        <span class="n">yearly_temperatures</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="c"># Add the temperature to the list</span>
+    <span class="n">yearly_temperatures</span><span class="p">[</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperatures</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
 </div>
 </div>
 </div>
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We now want to make a plot of the ice concentration over time. Reading in a single map is easy, but since we have 137 maps, we do not want to read them all in individually by hand. <strong>Write a loop over all the available files, and inside the loop, read in the data to a variable (e.g. <code>data</code>), and also extract the year, month, and day as integer values (e.g. <code>year</code>, <code>month</code>, and <code>day</code>)</strong>. Then, also inside the loop, <strong>compute a variable <code>time</code></strong> which is essentially the fractional time in years (so 1st July 2012 is 2012.5). You can assume for simplicity that each month has 30 days - this will not affect the results later. Finally, also <strong>compute for each file the total number of pixels that have a value above 50%</strong>. After the loop, <strong>make a plot of the number of pixels with a concentration above 50% against time</strong>.</p>
-<p>You will likely notice that the ticks are in a strange format, where they are given in years since 2006, but you can change this with the following code:</p>
-<pre><code>&gt;&gt;&gt; from matplotlib.ticker import ScalarFormatter
-&gt;&gt;&gt; plt.gca().xaxis.set_major_formatter(ScalarFormatter(useOffset=False))</code></pre>
-<p><strong>Describe what you see in the plot</strong>.</p>
-<p>We now want something a little more quantitative than just the number of pixels, so we will try and compute the effective area of ice coverage, which we will define as the area that the icy region would be if we took all the ice and put it in one place. However, we first need to know the area of the pixels in the image, and since we are looking at a projection of a spherical surface, each pixel will be a different area. The areas (in km^2) are contained inside the file named <code>ice_data_area.npy</code>. <strong>Read in this data and make a plot (with colorbar) to see how the pixel area is changing over the image.</strong></p>
-<p>Now, <strong>loop over the files again as before, but this time, compute for each pixel the effective area of ice</strong> (given by the pixel area times the ice concentration) and then find the total effective area of ice over the image (remember that the values of the concentration are given as a percentage between 0 and 100!). In the same loop, compute the total area where the concentration of ice is 99% or above. <strong>Make a new plot of the effective area of the ice</strong> and the area of &gt;99% ice concentration against time (use different colors for the two datasets).</p>
-<p><strong>IMPORTANT</strong> - some of the pixels in the maps are set to <code>NaN</code> - meaning <em>Not a Number</em>. If you multiply a <code>NaN</code> value by another value, you get <code>NaN</code>, and if there are any <code>NaN</code> values in your summation, the total result will be <code>NaN</code>. One way to get around this is to use <code>np.nansum</code> instead of <code>np.sum</code> in order to find the sum. You can also use <code>np.isnan</code> to tell you where values are <code>NaN</code>. For example, <code>array[~np.isnan(array)]</code> will return all the values that are <em>not</em> <code>NaN</code> (because <code>~</code> means 'not').</p>
-<p><strong>Describe what you see - how does the minimum change over time for each of the curves?</strong></p>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-3---visualizing-changes-over-time-(10-points)">Part 3 - visualizing changes over time (10 points)<a class="anchor-link" href="#Part-3---visualizing-changes-over-time-(10-points)">&#182;</a></h2>
+<p>Having done this, the dictionary contains for each year a list of average temperatures. We can now loop through the years and find the minimum, average, and maximum:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">yearly_temperatures</span><span class="p">:</span>
+    
+    <span class="c"># We can store the current temperature list in a variable</span>
+    <span class="c"># to avoid having to write it out every time.</span>
+    <span class="n">t_list</span> <span class="o">=</span> <span class="n">yearly_temperatures</span><span class="p">[</span><span class="n">year</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">year</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">t_list</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">t_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_list</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">t_list</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+1995 -13.2778 8.76560005479 25.9444
+1996 -15.5 7.22983359342 23.8333
+1997 -12.8889 8.54842192459 21.5556
+1998 -12.2222 9.24570232486 25.5
+1999 -9.83333 9.11065174176 25.3333
+2000 -16.7778 9.76544640164 24.7778
+2001 -12.1667 9.00713250874 24.5556
+2002 -11.1111 9.88171428408 25.1111
+2003 -14.3333 9.39832563836 27.6667
+2004 -10.7778 8.87701570301 23.0
+2005 -14.1111 8.22475459088 25.1111
+2006 -11.2778 9.16376546758 25.9444
+2007 -8.83333 9.7686472507 26.2778
+2008 -5.11111 9.66086716264 24.0556
+2009 -10.7778 9.37229706466 23.2778
+2010 -9.33333 8.32130788219 25.7222
+2011 -9.27778 9.69163106301 25.5
+2012 -15.4444 9.22526714082 24.7222
+2013 -7.38889 0.645503775238 11.1667
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Find the date at which the area of the region where the ice concentration is above 99% is the smallest</strong>. What is the value of the minimum area?</p>
-<p>Next, <strong>read in the map for this minimum, and the map for the same day and month but from 2006</strong>. <strong>Make a side-by-side plot showing the 2006 and the 2011 data</strong>.</p>
-<p><strong>Compute the difference between the two maps</strong> so that a loss in ice over time will correspond to a negative value, and a gain in ice will correspond to a positive value. <strong>Make a plot</strong> of the difference, and use the <code>RdBu</code> colormap to highlight the changes (include a colorbar).</p>
+<p>In this case, the dates are in the right order, but when looping over a dictionary, order is not guaranteed, so it is safer to do:</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
+In&nbsp;[4]:
 </div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-4---yearly-averages-(4-points)">Part 4 - yearly averages (4 points)<a class="anchor-link" href="#Part-4---yearly-averages-(4-points)">&#182;</a></h2>
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">yearly_temperatures</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">t_list</span> <span class="o">=</span> <span class="n">yearly_temperatures</span><span class="p">[</span><span class="n">year</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">year</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">t_list</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">t_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_list</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">t_list</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+1995 -13.2778 8.76560005479 25.9444
+1996 -15.5 7.22983359342 23.8333
+1997 -12.8889 8.54842192459 21.5556
+1998 -12.2222 9.24570232486 25.5
+1999 -9.83333 9.11065174176 25.3333
+2000 -16.7778 9.76544640164 24.7778
+2001 -12.1667 9.00713250874 24.5556
+2002 -11.1111 9.88171428408 25.1111
+2003 -14.3333 9.39832563836 27.6667
+2004 -10.7778 8.87701570301 23.0
+2005 -14.1111 8.22475459088 25.1111
+2006 -11.2778 9.16376546758 25.9444
+2007 -8.83333 9.7686472507 26.2778
+2008 -5.11111 9.66086716264 24.0556
+2009 -10.7778 9.37229706466 23.2778
+2010 -9.33333 8.32130788219 25.7222
+2011 -9.27778 9.69163106301 25.5
+2012 -15.4444 9.22526714082 24.7222
+2013 -7.38889 0.645503775238 11.1667
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Compute average ice concentration maps for 2006 and 2011, and plot them side by side.</strong></p>
+<p>Now we can try and do the same thing, but sorting by month instead of year. For simplicity, let's assume that all 12 months are the same length:</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">
+In&nbsp;[5]:
 </div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Epilogue">Epilogue<a class="anchor-link" href="#Epilogue">&#182;</a></h2>
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">monthly_temperatures</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">days</span><span class="p">)):</span>
+    
+    <span class="c"># Find the month (as an integer). This finds the fractional</span>
+    <span class="c"># part of the date, multiplies it by 12, and then converts</span>
+    <span class="c"># to an integer. We then have to add 1 to make sure it is in</span>
+    <span class="c"># the range 1-12 (not 0-11).</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">12.</span> <span class="o">*</span> <span class="p">(</span><span class="n">days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">days</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="c"># If the key doesn&#39;t exist in the dictionary, create it</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">monthly_temperatures</span><span class="p">:</span>
+        <span class="n">monthly_temperatures</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="c"># Add the temperature to the list</span>
+    <span class="n">monthly_temperatures</span><span class="p">[</span><span class="n">month</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temperatures</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
 </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">monthly_temperatures</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">m_list</span> <span class="o">=</span> <span class="n">monthly_temperatures</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">month</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">m_list</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">m_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">m_list</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">m_list</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+1 -16.7778 -0.849400201742 12.2222
+2 -15.4444 0.662865429825 11.9444
+3 -7.66667 4.47398913816 16.2778
+4 -2.11111 9.27625387642 20.7222
+5 5.22222 13.97930566 23.1667
+6 7.77778 17.204186306 25.1111
+7 10.5 18.459178853 26.2778
+8 9.5 18.2187152876 27.6667
+9 3.88889 13.7085448664 22.7222
+10 -1.44444 9.38012671254 20.5
+11 -7.11111 3.74218128667 14.1667
+12 -15.5 0.220316730325 11.2778
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The data that we have here only cover five years, so we cannot reliably extract information about long term trends. However, it is worth noting that the minimum ice coverage you found here was a record minimum - never before (in recorded history) had the size of the ice shelf been so small. This is part of a long term trend due to global warming. In 2012, the record was again beaten, and most scientists believe that by ~2050, the Arctic will be completely ice-free for at least part of the summer.</p>
+<p>If we want to show the month, we can use a dictionary:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">MONTHS</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;January&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;February&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;March&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;April&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;May&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;June&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;July&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;August&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;September&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;October&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;November&quot;</span>
+<span class="n">MONTHS</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;December&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[8]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">monthly_temperatures</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">m_list</span> <span class="o">=</span> <span class="n">monthly_temperatures</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">MONTHS</span><span class="p">[</span><span class="n">month</span><span class="p">],</span> <span class="nb">min</span><span class="p">(</span><span class="n">m_list</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">m_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">m_list</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">m_list</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+January -16.7778 -0.849400201742 12.2222
+February -15.4444 0.662865429825 11.9444
+March -7.66667 4.47398913816 16.2778
+April -2.11111 9.27625387642 20.7222
+May 5.22222 13.97930566 23.1667
+June 7.77778 17.204186306 25.1111
+July 10.5 18.459178853 26.2778
+August 9.5 18.2187152876 27.6667
+September 3.88889 13.7085448664 22.7222
+October -1.44444 9.38012671254 20.5
+November -7.11111 3.74218128667 14.1667
+December -15.5 0.220316730325 11.2778
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You may want to look into the <a href="http://docs.python.org/2.7/library/calendar.html">caldendar</a> and <a href="http://docs.python.org/2.7/library/datetime.html">datetime</a> built-in modules to see if any of the above can be made easier.</p>
 </div>
 </div>
 </div>

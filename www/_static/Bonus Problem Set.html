@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Problem Set 2</title>
+<title>Bonus Problem Set</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -1683,7 +1683,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Problem-Set-2---Arctic-ice-maps">Problem Set 2 - Arctic ice maps<a class="anchor-link" href="#Problem-Set-2---Arctic-ice-maps">&#182;</a></h1>
+<h1 id="Bonus-Problem-Set---Finding-planets-outside-out-solar-system-with-transits">Bonus Problem Set - Finding planets outside out solar system with transits<a class="anchor-link" href="#Bonus-Problem-Set---Finding-planets-outside-out-solar-system-with-transits">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -1693,9 +1693,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Total points:</strong> 30</p>
-<p><strong>Due:</strong> Thursday 20th 18:00</p>
-<p><strong>Format:</strong> IPython Notebook</p>
+<p>This problem set is provided for fun/practice and is not graded!</p>
 </div>
 </div>
 </div>
@@ -1704,23 +1702,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The purpose of this problem set is to become familiar with working with image data, plotting it, and combining it in various ways for analysis.</p>
-<p>The data used in this problem set was collected by the AMSR-E instrument <a href="http://en.wikipedia.org/wiki/Aqua_(satellite)">Aqua</a> satellite. The data consists of maps of the concentration of ice in the Arctic collected between 2006 and 2011. I have downloaded and extracted the maps from <a href="http://www.iup.uni-bremen.de/seaice/amsr/">here</a> and have put them in a format that you can more easily used (if you are interested in using the raw data directly, let me know and I can show you).</p>
-<p>The data you should use can be downloaded from <a href="data/ice_data.tgz">here</a> and can also be accessed in <code>/local/py4sci/ice_data</code> if you are using the CIP computers. This is actually a subset of the data, with only two ice maps every month, but let me know if you are interested in getting the full dataset.</p>
-<p>The data is in 'Numpy' format, which means that you can read it as a Numpy array using:</p>
-<pre><code>&gt;&gt;&gt; import numpy as np
-&gt;&gt;&gt; data = np.load(&#39;ice_data/20080415.npy&#39;)</code></pre>
-<p>which will give you a 2-d array. Just for information, this was created with:</p>
-<pre><code>&gt;&gt;&gt; np.save(&#39;ice_data/20080415.npy&#39;, data)</code></pre>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-1---examining-a-single-map-(6-points)">Part 1 - examining a single map (6 points)<a class="anchor-link" href="#Part-1---examining-a-single-map-(6-points)">&#182;</a></h2>
+<h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -1730,9 +1712,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Start off by reading in one of the maps as shown above, and plot it with Matplotlib</strong>. Note that to get the correct orientation, you will need to call the <code>imshow</code> command with the <code>origin='lower'</code> option, which ensures that the (0,0) pixels is on the bottom left, not the top left. You can try and use different colormaps if you like (set by the <code>cmap</code> option) - see <a href="http://www.scipy.org/Cookbook/Matplotlib/Show_colormaps">here</a> for information on the available colormaps. You can specify a colormap to use with e.g. <code>cmap=plt.cm.jet</code> (i.e. <code>cmap=plt.cm.</code> followed by the name of the colormap). Note that you can make figures larger by specifying e.g.</p>
-<pre><code>&gt;&gt;&gt; plt.figure(figsize=(8,8))</code></pre>
-<p>where the size is given in inches. Try and find a way to plot a colorbar on the side, to show what color corresponds to what value. Remember that you can always look at the examples in the <a href="http://matplotlib.org/gallery.html">Matplotlib Gallery</a> to find examples. You can also try and remove the tick labels (<code>100</code>, <code>200</code>, etc.) since they are not useful - but don't worry if you can't figure out how.</p>
+<p><a href="https://en.wikipedia.org/wiki/Extrasolar_planet">Extrasolar planets</a> (or <em>exoplanets</em>) are planets that have been found around other stars than the Sun. The first extrasolar planet was discovered in 1995, and since then, over 700 exoplanets have been discovered! One method to find exoplanets is to look for dips in brightness as planets pass in front of the star, as demonstrated in the following animation:</p>
+<center>
+<br> <img src="http://www.iac.es/proyecto/tep/OSNanimkurzloop.gif" style="width: 400px;"/> <br><br>
+</center>
+
+<p>Because other stars only appear as points because they are so far away, we have to look for changes in the brightness. However, this is difficult, because planets are typically much smaller than their host star. If we were around another star, and could observe the planets in the solar system transit in front of the Sun, Jupiter would cause the Sun to become fainter by ~1%, and the Earth would cause the Sun to become fainter by ~0.01%.</p>
+<p>Many of the recent discoveries of exoplanets by this method have been found by the <a href="http://kepler.nasa.gov/">Kepler spacecraft</a> which is a telescope that was launched into space in 2009. The reason for using a space telescope is that it is much easier to accurately measure the brightness of stars without the atmosphere in the way, which makes it easier to detect smaller planets. Kepler has observed the same part of the sky many times, and several hundred planets have been discovered by this mission.</p>
+<p>In this practical exercise, we will analyze some of the real data from Kepler for one of the stars, to look for a planet.</p>
+<p>First, you will need to <a href="data/kepler_data.tgz">download the data</a> and decompress it so that you have a folder called <code>data</code>. On Linux, you can decompress the file with:</p>
+<pre><code>tar xvzf kepler_data.tgz</code></pre>
+<p>This folder contains several different <em>lightcurves</em>, which give the brightness of the star against time. <strong>The first column is the time since the start of the mission, in days, and the second column is the brightness in relative units</strong> (1 is the average brightness of the star).</p>
 </div>
 </div>
 </div>
@@ -1741,7 +1731,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-2---reading-in-multiple-maps-(10-points)">Part 2 - reading in multiple maps (10 points)<a class="anchor-link" href="#Part-2---reading-in-multiple-maps-(10-points)">&#182;</a></h2>
+<h2 id="Part-1---Finding-the-transit-lightcurve-from-a-single-dataset">Part 1 - Finding the transit lightcurve from a single dataset<a class="anchor-link" href="#Part-1---Finding-the-transit-lightcurve-from-a-single-dataset">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -1751,15 +1741,26 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We now want to make a plot of the ice concentration over time. Reading in a single map is easy, but since we have 137 maps, we do not want to read them all in individually by hand. <strong>Write a loop over all the available files, and inside the loop, read in the data to a variable (e.g. <code>data</code>), and also extract the year, month, and day as integer values (e.g. <code>year</code>, <code>month</code>, and <code>day</code>)</strong>. Then, also inside the loop, <strong>compute a variable <code>time</code></strong> which is essentially the fractional time in years (so 1st July 2012 is 2012.5). You can assume for simplicity that each month has 30 days - this will not affect the results later. Finally, also <strong>compute for each file the total number of pixels that have a value above 50%</strong>. After the loop, <strong>make a plot of the number of pixels with a concentration above 50% against time</strong>.</p>
-<p>You will likely notice that the ticks are in a strange format, where they are given in years since 2006, but you can change this with the following code:</p>
-<pre><code>&gt;&gt;&gt; from matplotlib.ticker import ScalarFormatter
-&gt;&gt;&gt; plt.gca().xaxis.set_major_formatter(ScalarFormatter(useOffset=False))</code></pre>
-<p><strong>Describe what you see in the plot</strong>.</p>
-<p>We now want something a little more quantitative than just the number of pixels, so we will try and compute the effective area of ice coverage, which we will define as the area that the icy region would be if we took all the ice and put it in one place. However, we first need to know the area of the pixels in the image, and since we are looking at a projection of a spherical surface, each pixel will be a different area. The areas (in km^2) are contained inside the file named <code>ice_data_area.npy</code>. <strong>Read in this data and make a plot (with colorbar) to see how the pixel area is changing over the image.</strong></p>
-<p>Now, <strong>loop over the files again as before, but this time, compute for each pixel the effective area of ice</strong> (given by the pixel area times the ice concentration) and then find the total effective area of ice over the image (remember that the values of the concentration are given as a percentage between 0 and 100!). In the same loop, compute the total area where the concentration of ice is 99% or above. <strong>Make a new plot of the effective area of the ice</strong> and the area of &gt;99% ice concentration against time (use different colors for the two datasets).</p>
-<p><strong>IMPORTANT</strong> - some of the pixels in the maps are set to <code>NaN</code> - meaning <em>Not a Number</em>. If you multiply a <code>NaN</code> value by another value, you get <code>NaN</code>, and if there are any <code>NaN</code> values in your summation, the total result will be <code>NaN</code>. One way to get around this is to use <code>np.nansum</code> instead of <code>np.sum</code> in order to find the sum. You can also use <code>np.isnan</code> to tell you where values are <code>NaN</code>. For example, <code>array[~np.isnan(array)]</code> will return all the values that are <em>not</em> <code>NaN</code> (because <code>~</code> means 'not').</p>
-<p><strong>Describe what you see - how does the minimum change over time for each of the curves?</strong></p>
+<p>1 - To start with, we will look at one of the lightcurves - <code>data/kplr002571238-2009259160929_llc.txt</code>. Read in the data from this file, and make a plot of brightness versus time to see what the data looks like. You will see that the brightness changes in an irregular way over time - this is mostly due to intrinsic changes in the brightness of the star, not the planet. However, you will see very small and narrow 'dips' that are evenly spaced - these are the planet transits!</p>
+<p>2 - We want to get rid of the large-scale variations that are just due to the changes in brightness of the star. Write a function that given two arrays <code>x</code> and <code>y</code> and a width <code>width</code> will return a new array containing <em>median-filtered</em> values of <code>y</code>. Median filtering means that you create a new array <code>y_new</code> where <code>y_new[i]</code> is the median of all <code>y[i]</code> values between <code>x[i] - width/2.</code> and <code>x[i] + width/2.</code>. Use this function to filter the lightcurve we are currently looking at using a width of 1 day. Make a plot showing the original fluxes with black points, and the smoothed (median filtered) version as a red line on top of the points. You should see that the curve reproduces the variations in the original data, but does not include the small 'dips' due to the planet.</p>
+<p>3 - Make a <em>residual</em> plot, that is a plot that shows the original data minus the smoothed version. This plot should show a mostly flat curve that includes regular dips due to the planet. Median filtering is a good way to get rid of variations in the stellar brightness that happen on longer timescales than the transit.</p>
+<p>4 - Now try and estimate the period of the transits using the plot. The easiest way to do this is to simply draw a vertical line (for example using <code>plt.axvline</code>) at the position of one of the transits, and trying to plot a second line lining up with the second transit, then look at the difference between these times. You should be able to estimate the period correctly within plus or minus one day.</p>
+<p>5 - Make a new plot of the brightness, but now instead of showing time on the x-axis, shows the <em>phase</em>, which is:</p>
+<pre><code>phase = (time % period) / period</code></pre>
+<p>where <code>period</code> is the period you determined in step 4. This basically shows how the flux of the star changes over the period of the variations, and is called a <em>folded</em> light-curve. If the period is correct, the transits (the dips in the lightcurve) will line up. However, it's likely that the period you found in step 4 is not perfect, so that the transits will not quite line up. Try changing the period a little either way to try and make all the transits line up, and record your value. Try and change the x-axis so that the transit happens at a phase of 0.5 (keeping the phase between 0 and 1) and make a plot of the points between a phase of 0.45 and 0.55.</p>
+<p>6 - What you should see now is essentially a combined lightcurve of several transits! We can now start answering scientific questions. For example:</p>
+<ul>
+<li><p>Estimate the depth of the transit relative to the brightness of the star. The depth of the transit is how much the brightness decreases by in the middle of the transit (just estimate from the plot, no need to program this)</p></li>
+<li><p>How long does the transit last? (just estimate from the plot, no need to program this)</p></li>
+<li><p>Can you estimate the radius of the planet relative to the star?</p></li>
+<li><p>The star is 0.85 times the radius of the Sun. How large is the planet compared to the Earth? (try and answer these questions from your lightcurve).</p></li>
+<li><p>Kepler's third law states for circular orbits that the orbital period of a planet <span class="math">\(T\)</span> is related to the radius of the orbit <span class="math">\(R\)</span> by:</p>
+<p><span class="math">\[\frac{4\pi^2}{T^2} = \frac{G\,M}{R^3}\]</span></p></li>
+</ul>
+<p>where <span class="math">\(G\)</span> is the gravitational constant, and M is the mass of the star. <span class="math">\(T\)</span> is the period you determined above, and <span class="math">\(M\)</span> is known to be 0.936 times the mass of the sun. What is the value of <span class="math">\(R\)</span>?</p>
+<ul>
+<li>How does this planetary system compare to the Earth? Is it likely that there is liquid water on the planet?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1768,7 +1769,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-3---visualizing-changes-over-time-(10-points)">Part 3 - visualizing changes over time (10 points)<a class="anchor-link" href="#Part-3---visualizing-changes-over-time-(10-points)">&#182;</a></h2>
+<h2 id="Part-2---Combining-all-the-datasets-to-improve-accuracy">Part 2 - Combining all the datasets to improve accuracy<a class="anchor-link" href="#Part-2---Combining-all-the-datasets-to-improve-accuracy">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -1778,47 +1779,16 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Find the date at which the area of the region where the ice concentration is above 99% is the smallest</strong>. What is the value of the minimum area?</p>
-<p>Next, <strong>read in the map for this minimum, and the map for the same day and month but from 2006</strong>. <strong>Make a side-by-side plot showing the 2006 and the 2011 data</strong>.</p>
-<p><strong>Compute the difference between the two maps</strong> so that a loss in ice over time will correspond to a negative value, and a gain in ice will correspond to a positive value. <strong>Make a plot</strong> of the difference, and use the <code>RdBu</code> colormap to highlight the changes (include a colorbar).</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-4---yearly-averages-(4-points)">Part 4 - yearly averages (4 points)<a class="anchor-link" href="#Part-4---yearly-averages-(4-points)">&#182;</a></h2>
-</div>
-</div>
-</div>
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Compute average ice concentration maps for 2006 and 2011, and plot them side by side.</strong></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Epilogue">Epilogue<a class="anchor-link" href="#Epilogue">&#182;</a></h2>
-</div>
-</div>
-</div>
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The data that we have here only cover five years, so we cannot reliably extract information about long term trends. However, it is worth noting that the minimum ice coverage you found here was a record minimum - never before (in recorded history) had the size of the ice shelf been so small. This is part of a long term trend due to global warming. In 2012, the record was again beaten, and most scientists believe that by ~2050, the Arctic will be completely ice-free for at least part of the summer.</p>
+<p>7 - Now read in all the datasets, and for each one, find the smoothed lightcurve and subtract it from the data. Then, combine the resulting datasets into a single time array and a single brightness array, and make a folded lightcurve (with phase on the x-axis) as in Step 6, showing the phase between 0 and 1. It's likely that you won't see the transit as well (or maybe not at all) since now that the datasets span a larger time range, you will need the period to be more accurate.</p>
+<p>8 - You can either try and manually adjust the period until you get a clean folded lightcurve including all the data, or you can try and automatically determine a more accurate period. There are different ways that this can be done, so you can try and develop your own algorithm to do it. If you need any ideas, then consider for example the following algorithm, which relies on the fact that when the period is wrong, the transits are scattered around in phase, and when the period is correct, the transits are all around the same values of the phase (so the scatter in the phase values of the points in the transits is low):</p>
+<ul>
+<li><p>Choose a period, and compute the corresponding phase as in Step 5. Then, select all points with fluxes below a certain threshold i.e. points that show the star's brightness during the transit event (e.g. below -0.0004).</p></li>
+<li><p>Find the standard deviation of the <strong>phase</strong> of these points (not the brightness)</p></li>
+<li><p>Repeat for several different periods. I would recommend trying 100 or more values between 0.8 and 1.2 times the period you previously estimated</p></li>
+<li><p>Make a plot of the standard deviation versus the period, and you should see a strong dip for the best period.</p></li>
+<li><p>Extract the value of the phase for the lowest standard deviation</p></li>
+</ul>
+<p>Once you have this, you can once again make a folded lightcurve of the transit, and you should now see a very nice transit lightcurve. You can now try and update your answers for Step 6.</p>
 </div>
 </div>
 </div>

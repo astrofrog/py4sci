@@ -2249,6 +2249,30 @@ array([ 1.,  1.,  1.,  1.,  1.])
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Create an array which contains 11 values logarithmically spaced between <span class="math">\(10^{-20}\)</span> and <span class="math">\(10^{-10}\)</span>.</li>
+<li>Create an array which contains the value 2 repeated 10 times</li>
+<li>Try using <code>np.empty(10)</code> and compare the results to <code>np.zeros(10)</code> - why do you think there is a difference?</li>
+<li>Create an array containing 5 times the value 0, as a 32-bit floating point array (this is harder)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Combining-arrays">Combining arrays<a class="anchor-link" href="#Combining-arrays">&#182;</a></h2>
 </div>
 </div>
@@ -2691,6 +2715,25 @@ array([0, 2, 4, 6, 8])
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given an array <code>x</code> with 10 elements, find the array <code>dx</code> containing 9 values where <code>dx[i] = x[i+1] - x[i]</code>. Do this without loops!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Multi-dimensional-arrays">Multi-dimensional arrays<a class="anchor-link" href="#Multi-dimensional-arrays">&#182;</a></h2>
 </div>
 </div>
@@ -3091,8 +3134,8 @@ In&nbsp;[39]:
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-array([ 0.14432187,  0.23060201,  0.75366994,  0.86369401,  0.53537168,
-        0.17827067,  0.60014289,  0.78880065,  0.85173289,  0.42981447])
+array([ 0.4467239 ,  0.34007692,  0.65293332,  0.17423549,  0.43627657,
+        0.84898537,  0.38116973,  0.91970687,  0.06565358,  0.76670122])
 </pre>
 </div>
 
@@ -3127,8 +3170,8 @@ In&nbsp;[40]:
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-array([ 2.3337658 ,  2.56496043,  4.07115126,  2.78983728,  1.44283486,
-        3.42959559,  3.82800308,  4.75379339,  3.4870385 ,  3.56794477])
+array([ 3.29192335,  4.80830148,  3.84664781,  2.44510687,  3.88614097,
+        2.03127474,  4.21570474,  3.7067482 ,  5.24457887,  3.65075723])
 </pre>
 </div>
 
@@ -3804,7 +3847,7 @@ array([1, 0, 4, 0, 0, 3, 1, 5, 0, 0, 3, 4, 4, 3])
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2>
+<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -3814,7 +3857,7 @@ array([1, 0, 4, 0, 0, 3, 1, 5, 0, 0, 3, 4, 4, 3])
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+<p>Download <a href="data/munich_temperatures_average_with_bad_data.txt">this</a> data file, which gives the temperature in Munich every day for several years. Read in the file using <code>np.loadtxt</code>. The data contains bad values, which you can identify by looking at the minimum and maximum values of the array. Use masking to get rid of the bad temperature values.</p>
 </div>
 </div>
 </div>

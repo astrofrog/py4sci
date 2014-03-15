@@ -1683,10 +1683,38 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="problem-set-1---dna">Problem Set 1 - DNA</h1>
-<p>This is the first graded problem set for the course. The solutions are due by November 8th at the latest, and should be submitted as a single Python script via <a href="http://gist.github.com">gist</a> as described in the first lecture.</p>
-<p>This problem set is worth 30 points (there will be 120 points in total for the four problem sets, and you will need 60%, or 72 points, to pass the course).</p>
-<p>The number of points in this problem sheet is <em>not</em> directly proportional to the difficulty. In fact, the last two questions are more difficult than the first ones, but are worth fewer points in terms of the amount of work/code, and are there for people who enjoy challenges :) So you can choose to not complete for example questions 6 and 7, and you should still be able to get more than 60% of points from the previous questions if you answer them correctly.</p>
+<h1 id="Problem-Set-1---DNA">Problem Set 1 - DNA<a class="anchor-link" href="#Problem-Set-1---DNA">&#182;</a></h1>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Total points:</strong> 30</p>
+<p><strong>Due:</strong> Tuesday 18th 18:00</p>
+<p><strong>Format:</strong> Single Python script, or IPython Notebook</p>
+<p>*The number of points in this problem sheet is <em>not</em> directly proportional to the difficulty. In fact, Part 3 is more difficult than Part 1 and 2, but is worth fewer points in terms of the amount of work/code, and are there for people who enjoy challenges :) So you can choose to not complete Part 3, and you should still be able to get more than 60% of points from the previous questions if you answer them correctly.*</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This problem set is about DNA data and methods typically applied to this kind of data. As a reminder, <a href="http://en.wikipedia.org/wiki/DNA">DNA</a> is a molecule that encodes genetic instructions for living organisms. DNA is typically found as a double-stranded helix, in which each strand corresponds to a sequence of <em>nucleotides</em>. Each nucleotide consists of a nucleobase (guanine, adenine, thymine, or cytosine) attached to sugars, which are in turn separated from each other by phosphate groups:</p>
 <br>
 <div align='center'>
@@ -1698,23 +1726,111 @@ div#notebook {
 <p>DNA is therefore most commonly represented as a sequence of nucleobases, such as <code>GATTACACCTCATTATAAA</code>.</p>
 <p>For more information about DNA, see the wikipedia page in <a href="http://de.wikipedia.org/wiki/Desoxyribonukleinsäure">German</a> or <a href="http://en.wikipedia.org/wiki/DNA">English</a>.</p>
 <p>In this problem set, we will be working with fake genetic data, since real-life data often has added complications, but the functions and techniques uses here are the same or very similar to techniques used on real data.</p>
-<h2 id="question-1-6-points">Question 1 (6 points)</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-1-(10-points)">Part 1 (10 points)<a class="anchor-link" href="#Part-1-(10-points)">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-1-(6-points)">Question 1 (6 points)<a class="anchor-link" href="#Question-1-(6-points)">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The <strong>reverse complement</strong> of DNA is found by reversing the DNA sequence, then replacing each base by its complement (A is replaced by T, T is replaced by A, G is replaced by C, and C is replaced by G). For example, the reverse complement of <code>ATTCGA</code> is <code>TCGAAT</code></p>
 <p>Write a Python function <code>reverse_complement</code> that takes a DNA sequence as a string, and returns the reverse complement. Test your function by ensuring that <code>reverse_complement('ATTCGA')</code> is <code>'TCGAAT'</code>, then find the reverse complement of the following sequence:</p>
 <pre><code>ACTTGCTATCGTAGCATGGGCGTATTATTAGGCTAGTCGGATTGCGATCGGATCGATTGCA</code></pre>
 <p>Print the result out using <code>print</code>.</p>
-<h2 id="question-2-3-points">Question 2 (3 points)</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-2-(4-points)">Question 2 (4 points)<a class="anchor-link" href="#Question-2-(4-points)">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="http://en.wikipedia.org/wiki/RNA">Ribonucleic acid (RNA)</a> is a family of large biological molecules that is <em>transcribed</em> from DNA by the <a href="http://en.wikipedia.org/wiki/RNA_polymerase">RNA Polymerase</a> enzyme. It consists of a single strand of nucleotides that are identical to the ones found in DNA, with the exception of uracil (U), which replaces thymine (T).</p>
 <p><a href="http://en.wikipedia.org/wiki/Messenger_RNA">Messenger RNA</a> molecules (or mRNA) are a subset of RNA molecules that are used to pass information from DNA to <a href="http://en.wikipedia.org/wiki/Ribosome">ribosomes</a>, which then translates the mRNA to protein sequences.</p>
 <p>Write a Python function <code>dna_to_mrna</code> that takes a DNA sequence and returns the corresponding mRNA sequence. For example, the DNA sequence <code>ATCGCGAT</code> should produce the mRNA sequence <code>AUCGCGAU</code>.</p>
-<h2 id="question-3-7-points">Question 3 (7 points)</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-2-(15-points)">Part 2 (15 points)<a class="anchor-link" href="#Part-2-(15-points)">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-3-(8-points)">Question 3 (8 points)<a class="anchor-link" href="#Question-3-(8-points)">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>When the mRNA is translated to a protein sequence, each set of three nucleotides, called a <strong>codon</strong>, is translated into a single amino acid. For example, the codon <code>UUC</code> translates to the amino acid <em>Phenylalanine</em>. Each amino acid can be represented by a single letter - for example Phenylalanine is represented by the letter <code>F</code>. A protein, which is formed from a sequence of amino acids, can therefore be written as a sequence of letters in the same way as DNA or mRNA, but using more of the letters of the alphabet since there are more than four amino acids.</p>
 <p>The following <a href="data/problem_1_codons.txt">file</a> contains two columns. The first column gives a list of codons, and the second column gives the corresponding amino acid (represented by a single letter). Certain codons do not correspond to an amino acid, but instead indicate that the amino acid sequence is finished. These are indicated by <code>Stop</code>.</p>
 <p>Write a function <code>mrna_to_protein</code> that takes an mRNA sequence (as a string) and returns the sequence of amino acids (as a string), stopping the first time a <code>Stop</code> codon is encountered. Make sure that the file is only read once when running the script (and not every time you want to translate a codon). You will likely need to use a Python dictionary to help.</p>
 <p>Finally, write a function <code>dna_to_protein</code> that takes a DNA sequence (as a string) and returns the sequence of amino acids (as a string), making use of the functions that you wrote previously.</p>
 <p>Print out the amino acid sequence for the following DNA sequence:</p>
 <pre><code>AATCTCTACGGAAGTAGGTCAGTACTGATCGATCAGTCGATCGGGCGGCGATTTCGATCTGATTGTACGGCGGGCTAG</code></pre>
-<h2 id="question-4-6-points">Question 4 (6 points)</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-4-(7-points)">Question 4 (7 points)<a class="anchor-link" href="#Question-4-(7-points)">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In the previous questions, we have been specifying the DNA sequence by hand, but DNA sequences are usually long and are stored in files. A common file format is the <a href="http://en.wikipedia.org/wiki/FASTA_format">FASTA format</a> which looks similar to this:</p>
 <pre><code>&gt;label1
 ACTGTATCGATGCTAGCTACGTAGCTAGCTAGCTAGCTGACGTA
@@ -1725,9 +1841,34 @@ ACGGACTAGGGCGCGGCGGGGCGGATTTTCGAGTCGAGCGTTAT</code></pre>
 <p>The first line starts with a <code>&gt;</code> which is immediately followed by a label (which might be the name of the gene for example). The sequence then starts on the second line, and may continue on several lines. It is common to limit the length of each line to 80, but this may vary from file to file. The sequence stops once either the file ends, or a line starts with <code>&gt;</code>, which indicates that a new sequence is being given. There may be any number of sequences in a file.</p>
 <p>Write a function <code>read_fasta</code>, that takes the name of a file (as a string) and returns a Python dictionary containing all the sequences from the file, with the keys in the dictionary corresponding to the label. If a sequence is given over several lines, you should remove any line returns and spaces. You should then be able to access the DNA for <code>label1</code> with <code>d['label1']</code> for example (if <code>d</code> is the name of the dictionary).</p>
 <p>Use this function and the functions you have written above to read in <a href="data/problem_1_question_4.fasta">this file</a> and print out, for each sequence, the label, followed by the <strong>amino acid</strong> sequence (not the DNA sequence!).</p>
-<h2 id="question-5-3-points">Question 5 (3 points)</h2>
-<p>Write a function <code>write_fasta</code>, that given a dictionary of sequences, will write them out to a file in FASTA format. Use this to write back out the sequences from Question 4. Note that since you are using a dictionary, the sequences may be in a different order (which doesn't matter).</p>
-<h2 id="question-6-3-points">Question 6 (3 points)</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-3-(5-points)">Part 3 (5 points)<a class="anchor-link" href="#Part-3-(5-points)">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-5-(3-points)">Question 5 (3 points)<a class="anchor-link" href="#Question-5-(3-points)">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Given several sequences with the same length, but which may include point mutations (i.e. individual nucleotides are changed), we want to try and find the most likely original sequence. For example, if we have the following sequences:</p>
 <pre><code>sequence 1: A C T C T
 sequence 2: A C T C G
@@ -1742,12 +1883,27 @@ sequence 4: A T G C T</code></pre>
          </code></pre>
 <p>which indicates how many nucleotides of each type are found at each position, and from this we can see that the most common first base is A, the most common second base is C, and so on. The most common sequence is then <code>ACTCT</code>. This is the <a href="http://en.wikipedia.org/wiki/Consensus_sequence"><strong>consensus sequence</strong></a>.</p>
 <p>Write a function <code>consensus_sequence</code> that takes a dictionary of sequences (such as the one returned by <code>read_fasta</code>), and computes then returns the consensus sequence. Download <a href="data/problem_1_question_6.fasta">this file</a>, read it in using the function you wrote previsouly, and print out the corresponding consensus sequence. All the sequences in this file are the same length.</p>
-<p>If you managed Question 5, write out the resulting sequence to a FASTA file.</p>
-<h2 id="question-7-2-points">Question 7 (2 points)</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-7-(2-points)">Question 7 (2 points)<a class="anchor-link" href="#Question-7-(2-points)">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In some cases, it is useful to be able to identify the longest common sub-sequence between two sequences. For example, in the sequences <code>ACTGCT</code> and <code>TGCCCT</code>, the longest common sub-sequence is <code>TGC</code> (AC<strong>TGC</strong>T and <strong>TGC</strong>CCT). Note that these do not have to be at the same positon in each sequence.</p>
 <p>Write a function, <code>longest_common_sequence</code>, that takes a dictionary of sequences (such as the one returned by <code>read_fasta</code>) and returns the longest common sub-sequence found in all the sequences.</p>
 <p>Download <a href="data/problem_1_question_7.fasta">this file</a>, read it in, and print out the longest common sequence between all the sequences.</p>
-<p>If you managed Question 5, write out the resulting sequence to a FASTA file.</p>
 </div>
 </div>
 </div>

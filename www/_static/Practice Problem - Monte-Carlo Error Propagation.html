@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Problem Set 2</title>
+<title>Practice Problem - Monte-Carlo Error Propagation</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -1683,7 +1683,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Problem-Set-2---Arctic-ice-maps">Problem Set 2 - Arctic ice maps<a class="anchor-link" href="#Problem-Set-2---Arctic-ice-maps">&#182;</a></h1>
+<h1 id="Practice-Problem---Monte-Carlo-Error-Propagation">Practice Problem - Monte-Carlo Error Propagation<a class="anchor-link" href="#Practice-Problem---Monte-Carlo-Error-Propagation">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -1693,34 +1693,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Total points:</strong> 30</p>
-<p><strong>Due:</strong> Thursday 20th 18:00</p>
-<p><strong>Format:</strong> IPython Notebook</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The purpose of this problem set is to become familiar with working with image data, plotting it, and combining it in various ways for analysis.</p>
-<p>The data used in this problem set was collected by the AMSR-E instrument <a href="http://en.wikipedia.org/wiki/Aqua_(satellite)">Aqua</a> satellite. The data consists of maps of the concentration of ice in the Arctic collected between 2006 and 2011. I have downloaded and extracted the maps from <a href="http://www.iup.uni-bremen.de/seaice/amsr/">here</a> and have put them in a format that you can more easily used (if you are interested in using the raw data directly, let me know and I can show you).</p>
-<p>The data you should use can be downloaded from <a href="data/ice_data.tgz">here</a> and can also be accessed in <code>/local/py4sci/ice_data</code> if you are using the CIP computers. This is actually a subset of the data, with only two ice maps every month, but let me know if you are interested in getting the full dataset.</p>
-<p>The data is in 'Numpy' format, which means that you can read it as a Numpy array using:</p>
-<pre><code>&gt;&gt;&gt; import numpy as np
-&gt;&gt;&gt; data = np.load(&#39;ice_data/20080415.npy&#39;)</code></pre>
-<p>which will give you a 2-d array. Just for information, this was created with:</p>
-<pre><code>&gt;&gt;&gt; np.save(&#39;ice_data/20080415.npy&#39;, data)</code></pre>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-1---examining-a-single-map-(6-points)">Part 1 - examining a single map (6 points)<a class="anchor-link" href="#Part-1---examining-a-single-map-(6-points)">&#182;</a></h2>
+<h2 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -1730,9 +1703,28 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Start off by reading in one of the maps as shown above, and plot it with Matplotlib</strong>. Note that to get the correct orientation, you will need to call the <code>imshow</code> command with the <code>origin='lower'</code> option, which ensures that the (0,0) pixels is on the bottom left, not the top left. You can try and use different colormaps if you like (set by the <code>cmap</code> option) - see <a href="http://www.scipy.org/Cookbook/Matplotlib/Show_colormaps">here</a> for information on the available colormaps. You can specify a colormap to use with e.g. <code>cmap=plt.cm.jet</code> (i.e. <code>cmap=plt.cm.</code> followed by the name of the colormap). Note that you can make figures larger by specifying e.g.</p>
-<pre><code>&gt;&gt;&gt; plt.figure(figsize=(8,8))</code></pre>
-<p>where the size is given in inches. Try and find a way to plot a colorbar on the side, to show what color corresponds to what value. Remember that you can always look at the examples in the <a href="http://matplotlib.org/gallery.html">Matplotlib Gallery</a> to find examples. You can also try and remove the tick labels (<code>100</code>, <code>200</code>, etc.) since they are not useful - but don't worry if you can't figure out how.</p>
+<p>You have likely encountered the concept of propagation of uncertainty before (see <a href="http://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas">the usual rules here</a>). The idea is that given measurements with uncertainties, we can find the uncertainty on the final result of an equation.</p>
+<p>For example, let us consider the following equation:</p>
+<p><span class="math">\[F = \frac{G~M_1~M_2}{r^2}\]</span></p>
+<p>which gives the gravitational force between two masses <span class="math">\(M_1\)</span> and <span class="math">\(M_2\)</span> separated by a distance <span class="math">\(r\)</span>.</p>
+<p>Let us now imagine that we have two masses:</p>
+<p><span class="math">\[M_1=40\times10^4\pm0.05\times10^4\rm{kg}\]</span></p>
+<p>and</p>
+<p><span class="math">\[M_2=30\times10^4\pm0.1\times10^4\rm{kg}\]</span></p>
+<p>separated by a distance:</p>
+<p><span class="math">\[r=3.2\pm0.01~\rm{m}\]</span></p>
+<p>where the uncertaintes are the standard deviations of Gaussian distributions which could be e.g. measurement errors.</p>
+<p>We also know:</p>
+<p><span class="math">\[G = 6.67384\times10^{-11}~\rm{m}^3~\rm{kg}^{-1}~\rm{s}^{-2}\]</span></p>
+<p>(exact value, no uncertainty)</p>
+<p>Use the <a href="http://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas">standard error propagation rules</a> to determine the resulting force and uncertainty in your script (you can just derive the equation by hand and implement it in a single line in your code).</p>
+<p>Now, we can try using a <strong>Monte-Carlo</strong> technique instead. The idea behind Monte-Carlo techniques is to generate many possible solutions using random numbers and using these to look at the overall results. In the above case, you can propagate uncertainties with a Monte-Carlo method by doing the following:</p>
+<ul>
+<li><p>randomly sample values of <span class="math">\(M_1\)</span>, <span class="math">\(M_2\)</span>, and <span class="math">\(r\)</span>, 1000000 times, using the means and standard deviations given above</p></li>
+<li><p>compute the gravitational force for each set of values</p></li>
+</ul>
+<p>You should do this with Numpy arrays, and <strong>without any loops</strong>. You should then get an array of 1000000 different values for the forces.</p>
+<p>Make a plot of the normalized histogram of these values of the force, and then overplot a Gaussian function with the mean and standard deviation derived with the standard error propagation rules. Make sure that you pick the range of x values in the plot wisely, so that the two distributions can be seen. Make sure there are also a sensible number of bins in the histogram so that you can compare the shape of the histogram and the Gaussian function. The two distributions should agree pretty well.</p>
 </div>
 </div>
 </div>
@@ -1741,7 +1733,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-2---reading-in-multiple-maps-(10-points)">Part 2 - reading in multiple maps (10 points)<a class="anchor-link" href="#Part-2---reading-in-multiple-maps-(10-points)">&#182;</a></h2>
+<h2 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -1751,74 +1743,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We now want to make a plot of the ice concentration over time. Reading in a single map is easy, but since we have 137 maps, we do not want to read them all in individually by hand. <strong>Write a loop over all the available files, and inside the loop, read in the data to a variable (e.g. <code>data</code>), and also extract the year, month, and day as integer values (e.g. <code>year</code>, <code>month</code>, and <code>day</code>)</strong>. Then, also inside the loop, <strong>compute a variable <code>time</code></strong> which is essentially the fractional time in years (so 1st July 2012 is 2012.5). You can assume for simplicity that each month has 30 days - this will not affect the results later. Finally, also <strong>compute for each file the total number of pixels that have a value above 50%</strong>. After the loop, <strong>make a plot of the number of pixels with a concentration above 50% against time</strong>.</p>
-<p>You will likely notice that the ticks are in a strange format, where they are given in years since 2006, but you can change this with the following code:</p>
-<pre><code>&gt;&gt;&gt; from matplotlib.ticker import ScalarFormatter
-&gt;&gt;&gt; plt.gca().xaxis.set_major_formatter(ScalarFormatter(useOffset=False))</code></pre>
-<p><strong>Describe what you see in the plot</strong>.</p>
-<p>We now want something a little more quantitative than just the number of pixels, so we will try and compute the effective area of ice coverage, which we will define as the area that the icy region would be if we took all the ice and put it in one place. However, we first need to know the area of the pixels in the image, and since we are looking at a projection of a spherical surface, each pixel will be a different area. The areas (in km^2) are contained inside the file named <code>ice_data_area.npy</code>. <strong>Read in this data and make a plot (with colorbar) to see how the pixel area is changing over the image.</strong></p>
-<p>Now, <strong>loop over the files again as before, but this time, compute for each pixel the effective area of ice</strong> (given by the pixel area times the ice concentration) and then find the total effective area of ice over the image (remember that the values of the concentration are given as a percentage between 0 and 100!). In the same loop, compute the total area where the concentration of ice is 99% or above. <strong>Make a new plot of the effective area of the ice</strong> and the area of &gt;99% ice concentration against time (use different colors for the two datasets).</p>
-<p><strong>IMPORTANT</strong> - some of the pixels in the maps are set to <code>NaN</code> - meaning <em>Not a Number</em>. If you multiply a <code>NaN</code> value by another value, you get <code>NaN</code>, and if there are any <code>NaN</code> values in your summation, the total result will be <code>NaN</code>. One way to get around this is to use <code>np.nansum</code> instead of <code>np.sum</code> in order to find the sum. You can also use <code>np.isnan</code> to tell you where values are <code>NaN</code>. For example, <code>array[~np.isnan(array)]</code> will return all the values that are <em>not</em> <code>NaN</code> (because <code>~</code> means 'not').</p>
-<p><strong>Describe what you see - how does the minimum change over time for each of the curves?</strong></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-3---visualizing-changes-over-time-(10-points)">Part 3 - visualizing changes over time (10 points)<a class="anchor-link" href="#Part-3---visualizing-changes-over-time-(10-points)">&#182;</a></h2>
-</div>
-</div>
-</div>
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Find the date at which the area of the region where the ice concentration is above 99% is the smallest</strong>. What is the value of the minimum area?</p>
-<p>Next, <strong>read in the map for this minimum, and the map for the same day and month but from 2006</strong>. <strong>Make a side-by-side plot showing the 2006 and the 2011 data</strong>.</p>
-<p><strong>Compute the difference between the two maps</strong> so that a loss in ice over time will correspond to a negative value, and a gain in ice will correspond to a positive value. <strong>Make a plot</strong> of the difference, and use the <code>RdBu</code> colormap to highlight the changes (include a colorbar).</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Part-4---yearly-averages-(4-points)">Part 4 - yearly averages (4 points)<a class="anchor-link" href="#Part-4---yearly-averages-(4-points)">&#182;</a></h2>
-</div>
-</div>
-</div>
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Compute average ice concentration maps for 2006 and 2011, and plot them side by side.</strong></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Epilogue">Epilogue<a class="anchor-link" href="#Epilogue">&#182;</a></h2>
-</div>
-</div>
-</div>
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The data that we have here only cover five years, so we cannot reliably extract information about long term trends. However, it is worth noting that the minimum ice coverage you found here was a record minimum - never before (in recorded history) had the size of the ice shelf been so small. This is part of a long term trend due to global warming. In 2012, the record was again beaten, and most scientists believe that by ~2050, the Arctic will be completely ice-free for at least part of the summer.</p>
+<p>Now repeat the experiment above with the following values:</p>
+<p><span class="math">\[M_1=40\times10^4\pm2\times10^4\rm{kg}\]</span> <span class="math">\[M_2=30\times10^4\pm10\times10^4\rm{kg}\]</span> <span class="math">\[r=3.2\pm1.0~\rm{m}\]</span></p>
+<p>and as above, produce a plot.</p>
+<p>In this case, which method do you think is more accurate? Why? What do you think are the advantages of using a Monte-Carlo technique?</p>
 </div>
 </div>
 </div>
