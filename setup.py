@@ -108,19 +108,6 @@ class BuildNotes(Command):
         for arg in range(len(sys.argv[1:])):
             sys.argv.pop(-1)
 
-        # First convert the lecture notes to slides - we have to do them
-        # individually in order to be able to specify a custom output prefix for
-        # each.
-
-        app = NbConvertApp()
-        app.initialize()
-        app.export_format = 'slides'
-        app.config.Exporter.template_file = 'lectures/py4sci_template.tpl'
-        for notebook in glob.glob('lectures/*.ipynb'):
-            app.notebooks = [notebook]
-            app.output_base = os.path.join('www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
-            app.start()
-
         # Now convert the lecture notes, problem sets, and practice problems to
         # HTML notebooks.
 
