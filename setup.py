@@ -121,6 +121,14 @@ class BuildNotes(Command):
             app.output_base = os.path.join('www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
             app.start()
 
+        data_dir = os.path.join('www', '_static', 'data')
+        if not os.path.exists(data_dir):
+            os.mkdir(data_dir)
+        for data_file in (glob.glob('lectures/data/*')
+                           + glob.glob('problems/data/*')
+                           + glob.glob('practice/data/*')):
+            shutil.copy2(data_file, data_dir)
+
 
 class DeployNotes(Command):
 
@@ -144,24 +152,33 @@ class DeployNotes(Command):
         ftp = FTP(SERVER)
         ftp.login(user=USER, passwd=getpass.getpass())
 
-        ftp.cwd('/public_html/PY4SCI_WS_2013_14')
+        for root, dirnames, filenames in os.walk('www/_build/html/'):
 
-        for slides in ProgressBar.iterate(glob.glob('lectures/data/*')
-                                          + glob.glob('lectures/*.html')
-                                          + ['lectures/custom.css']
-                                          + glob.glob('problems/data/*')
-                                          + glob.glob('problems/*.html')
-                                          + glob.glob('practice/data/*')
-                                          + glob.glob('practice/*.html')):
-            try:
-                remote_size = ftp.size(slides)
-            except:
-                remote_size = None
-            local_size = os.path.getsize(slides)
-            if local_size != remote_size:
-                ftp.storbinary('STOR ' + slides, open(slides, 'rb'))
+            print("Uploading files from {0}".format(root))
 
-        ftp.storbinary('STOR index.html', open('index.html', 'rb'))
+            ftp.cwd('/public_html/PY4SCI_SS_2014')
+            for directory in root.split('/')[3:]:
+
+                # Try and change to directory, make if not present
+                try:
+                    ftp.cwd(directory)
+                except:
+                    ftp.mkd(directory)
+                    ftp.cwd(directory)
+
+            for filename in ProgressBar(filenames):
+
+                local_file = os.path.join(root, filename)
+
+                try:
+                    remote_size = ftp.size(filename)
+                except:
+                    remote_size = None
+
+                local_size = os.path.getsize(local_file)
+
+                if local_size != remote_size:
+                    ftp.storbinary('STOR ' + filename, open(local_file, 'rb'))
 
         ftp.quit()
 
