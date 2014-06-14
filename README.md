@@ -14,11 +14,11 @@ information about the license, see the following page:
 Format
 ------
 
-The notes were prepared in the IPython Notebook using Python 2.7. They are not
+The notes were prepared in the IPython Notebook using Python 3.4. They are
 currently fully compatible with Python 3. To edit or view the notes, start up
 the IPython notebook in the directory containing the file you are interested
 in. Alternatively, you can use the IPython Notebook Viewer at:
 
   http://nbviewer.ipython.org
-  
+
 to render the notebooks.
