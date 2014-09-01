@@ -209,7 +209,7 @@ class RunNotes(Command):
             if "Understanding" in notebook:
                 continue
             os.chdir(os.path.dirname(notebook))
-            r = NotebookRunner(read(open(os.path.basename(notebook)), 'json'))
+            r = NotebookRunner(read(open(os.path.basename(notebook)), 'json'), pylab=False)
             r.run_notebook(skip_exceptions=True)
             write(r.nb, open(os.path.basename(notebook), 'w'), 'json')
             os.chdir(start_dir)
