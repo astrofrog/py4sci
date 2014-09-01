@@ -208,7 +208,7 @@ class RunNotes(Command):
             if "Understanding" in notebook:
                 continue
             os.chdir(os.path.dirname(notebook))
-            r = NotebookRunner(os.path.basename(notebook), pylab=True)
+            r = NotebookRunner(os.path.basename(notebook))
             r.run_notebook(skip_exceptions=True)
             r.save_notebook(os.path.basename(notebook))
             os.chdir(start_dir)
