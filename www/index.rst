@@ -38,8 +38,8 @@ Tuesday
 Wednesday
 ^^^^^^^^^
 
-* `Introduction to Matplotlib <_static/10.%20Introduction%20to%20Matplotlib.html>`_
-* `Introduction to Numpy <_static/11.%20Introduction%20to%20Numpy.html>`_
+* `Introduction to Numpy <_static/10.%20Introduction%20to%20Numpy.html>`_
+* `Introduction to Matplotlib <_static/11.%20Introduction%20to%20Matplotlib.html>`_
 * `Files and paths <_static/12.%20Files%20and%20paths.html>`_
 * `String formatting <_static/13.%20String%20Formatting.html>`_
 
