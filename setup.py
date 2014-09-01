@@ -199,6 +199,7 @@ class RunNotes(Command):
         # HTML notebooks.
 
         from runipy.notebook_runner import NotebookRunner
+        from IPython.nbformat.current import read, write
 
         start_dir = os.path.abspath('.')
 
@@ -208,9 +209,9 @@ class RunNotes(Command):
             if "Understanding" in notebook:
                 continue
             os.chdir(os.path.dirname(notebook))
-            r = NotebookRunner(os.path.basename(notebook))
+            r = NotebookRunner(read(open(os.path.basename(notebook)), 'json'))
             r.run_notebook(skip_exceptions=True)
-            r.save_notebook(os.path.basename(notebook))
+            write(r.nb, open(os.path.basename(notebook), 'w'), 'json')
             os.chdir(start_dir)
 
 
