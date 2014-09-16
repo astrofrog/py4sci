@@ -156,7 +156,7 @@ class DeployNotes(Command):
 
             print("Uploading files from {0}".format(root))
 
-            ftp.cwd('/public_html/PY4SCI_SS_2014')
+            ftp.cwd('/public_html/PY4SCI_WS_2014_15')
             for directory in root.split('/')[3:]:
 
                 # Try and change to directory, make if not present

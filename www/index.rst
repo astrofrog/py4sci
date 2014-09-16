@@ -2,8 +2,8 @@ Python for Scientists
 =====================
 
 Welcome to the lecture notes for the Python: Programming for Scientists course
-at the university of Heidelberg! This block course runs from the 17th to the
-21st of March 2014.
+at the university of Heidelberg! This block course runs from the 22nd to the
+26th of September 2014.
 
 Lecture Notes
 -------------
