@@ -108,6 +108,9 @@ class BuildNotes(Command):
         for arg in range(len(sys.argv[1:])):
             sys.argv.pop(-1)
 
+        if not os.path.exists(os.path.join('www', '_static')):
+            os.mkdir(os.path.join('www', '_static'))
+
         # Now convert the lecture notes, problem sets, and practice problems to
         # HTML notebooks.
 
