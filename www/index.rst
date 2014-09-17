@@ -18,21 +18,22 @@ Monday
 ^^^^^^
 
 * `Running Python code <_static/02.%20How%20to%20run%20Python%20code.html>`_
-* `Numbers, Strings, and Lists <_static/03.%20Numbers%2C%20String%2C%20and%20Lists.html>`_
-* `Booleans, Tuples, and Dictionaries <_static/04.%20Booleans%2C%20Tuples%2C%20and%2C%20Dictionaries.html>`_
-* `Control Flow <_static/05.%20Control%20Flow.html>`_
-* `Functions <_static/06.%20Functions.html>`_
+* `Using the IPython notebook <_static/03.%20Using%20the%20IPython%20notebook.html>`_
+* `Numbers, Strings, and Lists <_static/04.%20Numbers%2C%20String%2C%20and%20Lists.html>`_
+* `Booleans, Tuples, and Dictionaries <_static/05.%20Booleans%2C%20Tuples%2C%20and%2C%20Dictionaries.html>`_
+* `Control Flow <_static/06.%20Control%20Flow.html>`_
+* `Functions <_static/07.%20Functions.html>`_
 
-* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Tuesday 18th 18:00)
+* Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
+
+* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Tuesday 23th 18:00)
 
 Tuesday
 ^^^^^^^
 
-* `Modules and Variable Scope <_static/07.%20Modules%20and%20Variable%20Scope.html>`_
-* `Reading and Writing files <_static/08.%20Reading%20and%20writing%20files.html>`_
-* `Using the IPython notebook <_static/09.%20Using%20the%20IPython%20notebook.html>`_
+* `Modules and Variable Scope <_static/08.%20Modules%20and%20Variable%20Scope.html>`_
+* `Reading and Writing files <_static/09.%20Reading%20and%20writing%20files.html>`_
 
-* Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
 * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
 
 Wednesday
@@ -45,7 +46,7 @@ Wednesday
 
 * Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Thursday 20th 18:00)
+* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Thursday 25th 18:00)
 
 Thursday
 ^^^^^^^^
@@ -57,7 +58,7 @@ Thursday
 
 * Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Monday 24th 18:00)
+* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Monday 29th 18:00)
 
 Friday
 ^^^^^^
