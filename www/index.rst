@@ -26,7 +26,7 @@ Monday
 
 * Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Tuesday 23th 18:00)
+* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Tuesday 23th 19:00)
 
 Tuesday
 ^^^^^^^
@@ -46,7 +46,7 @@ Wednesday
 
 * Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Thursday 25th 18:00)
+* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 26th 19:00)
 
 Thursday
 ^^^^^^^^
@@ -58,7 +58,7 @@ Thursday
 
 * Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Monday 29th 18:00)
+* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Tuesday 30th 19:00)
 
 Friday
 ^^^^^^
