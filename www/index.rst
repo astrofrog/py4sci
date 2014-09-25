@@ -22,19 +22,19 @@ Monday
 * `Numbers, Strings, and Lists <_static/04.%20Numbers%2C%20String%2C%20and%20Lists.html>`_
 * `Booleans, Tuples, and Dictionaries <_static/05.%20Booleans%2C%20Tuples%2C%20and%2C%20Dictionaries.html>`_
 * `Control Flow <_static/06.%20Control%20Flow.html>`_
-* `Functions <_static/07.%20Functions.html>`_
 
 * Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
-
-* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Tuesday 23th 19:00)
 
 Tuesday
 ^^^^^^^
 
+* `Functions <_static/07.%20Functions.html>`_
 * `Modules and Variable Scope <_static/08.%20Modules%20and%20Variable%20Scope.html>`_
 * `Reading and Writing files <_static/09.%20Reading%20and%20writing%20files.html>`_
 
 * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
+
+* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 24th 19:00)
 
 Wednesday
 ^^^^^^^^^
