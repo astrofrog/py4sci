@@ -13,7 +13,8 @@ Information
 
 * `About the course <_static/00.%20About%20the%20course.html>`_
 * `What is Python? <_static/01.%20What%20is%20Python.html>`_
-* `Exercise solutions <_static/Exercise%20solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Exercise%20Solutions.html>`_ (updated during course)
+
 Monday
 ^^^^^^
 
