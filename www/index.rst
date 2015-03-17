@@ -2,8 +2,8 @@ Python for Scientists
 =====================
 
 Welcome to the lecture notes for the Python: Programming for Scientists course
-at the university of Heidelberg! This block course runs from the 22nd to the
-26th of September 2014.
+at the university of Heidelberg! This block course runs from the 23nd to the
+27th of March 2015.
 
 Lecture Notes
 -------------
@@ -35,7 +35,7 @@ Tuesday
 
 * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 24th 19:00)
+* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
 
 Wednesday
 ^^^^^^^^^
@@ -47,7 +47,7 @@ Wednesday
 
 * Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 26th 19:00)
+* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
 
 Thursday
 ^^^^^^^^
@@ -59,7 +59,7 @@ Thursday
 
 * Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Tuesday 30th 19:00)
+* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Tuesday 31st 19:00)
 
 Friday
 ^^^^^^
