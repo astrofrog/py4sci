@@ -30,8 +30,8 @@ Tuesday
 ^^^^^^^
 
 * `Functions <_static/07.%20Functions.html>`_
-* `Modules and Variable Scope <_static/08.%20Modules%20and%20Variable%20Scope.html>`_
-* `Reading and Writing files <_static/09.%20Reading%20and%20writing%20files.html>`_
+* `Reading and Writing files <_static/08.%20Reading%20and%20writing%20files.html>`_
+* `Modules and Variable Scope <_static/09.%20Modules%20and%20Variable%20Scope.html>`_
 
 * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
 
