@@ -13,7 +13,8 @@ Information
 
 * `About the course <_static/00.%20About%20the%20course.html>`_
 * `What is Python? <_static/01.%20What%20is%20Python.html>`_
-* `Exercise solutions <_static/Exercise%20Solutions.html>`_ (updated during course)
+
+.. * `Exercise solutions <_static/Exercise%20Solutions.html>`_ (updated during course)
 
 Monday
 ^^^^^^
@@ -28,60 +29,61 @@ Monday
 
 * Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
 
-Tuesday
-^^^^^^^
-
-**Download Notebooks:** `tar file <_static/py4sci_tue.tgz>`__ - `zip file <_static/py4sci_tue.zip>`__
-
-* `Functions <_static/07.%20Functions.html>`_
-* `Reading and Writing files <_static/08.%20Reading%20and%20writing%20files.html>`_
-* `Modules and Variable Scope <_static/09.%20Modules%20and%20Variable%20Scope.html>`_
-
-* Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
-
-* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
-
-Wednesday
-^^^^^^^^^
-
-**Download Notebooks:** `tar file <_static/py4sci_wed.tgz>`__ - `zip file <_static/py4sci_wed.zip>`__
-
-* `Introduction to Numpy <_static/10.%20Introduction%20to%20Numpy.html>`_
-* `Introduction to Matplotlib <_static/11.%20Introduction%20to%20Matplotlib.html>`_
-* `Files and paths <_static/12.%20Files%20and%20paths.html>`_
-* `String formatting <_static/13.%20String%20Formatting.html>`_
-
-* Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
-
-* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
-
-Thursday
-^^^^^^^^
-
-**Download Notebooks:** `tar file <_static/py4sci_thu.tgz>`__ - `zip file <_static/py4sci_thu.zip>`__
-
-* `Python variables - behind the scenes <_static/14.%20Python%20variables%20-%20benind%20the%20scenes.html>`_
-* `Introduction to Scipy: Fitting data <_static/15.%20Fitting%20models%20to%20data.html>`_
-* `Introduction to Scipy: Interpolation and Integration <_static/16.%20Interpolation%20and%20Integration.html>`_
-* `Understanding Python Errors <_static/17.%20Understanding%20Python%20errors.html>`_
-
-* Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
-
-* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Tuesday 31st 19:00)
-
-Friday
-^^^^^^
-
-**Download Notebooks:** `tar file <_static/py4sci_fri.tgz>`__ - `zip file <_static/py4sci_fri.zip>`__
-
-* `Accessing remote resources <_static/18.%20Accessing%20remote%20resources.html>`_
-* `Object-oriented programming <_static/19.%20Object-oriented%20programming.html>`_
-
-* Practice: `Map of temperatures <_static/Practice%20Problem%20-%20Map%20of%20temperatures%20over%20Germany.html>`_ (`solution <_static/Practice%20Problem%20-%20Map%20of%20Temperatures%20over%20Germany%20-%20Sample%20Solution.html>`__)
+.. Tuesday
+.. ^^^^^^^
+..
+.. **Download Notebooks:** `tar file <_static/py4sci_tue.tgz>`__ - `zip file <_static/py4sci_tue.zip>`__
+..
+.. * `Functions <_static/07.%20Functions.html>`_
+.. * `Reading and Writing files <_static/08.%20Reading%20and%20writing%20files.html>`_
+.. * `Modules and Variable Scope <_static/09.%20Modules%20and%20Variable%20Scope.html>`_
+..
+.. * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
+..
+.. * `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
+..
+.. Wednesday
+.. ^^^^^^^^^
+..
+.. **Download Notebooks:** `tar file <_static/py4sci_wed.tgz>`__ - `zip file <_static/py4sci_wed.zip>`__
+..
+.. * `Introduction to Numpy <_static/10.%20Introduction%20to%20Numpy.html>`_
+.. * `Introduction to Matplotlib <_static/11.%20Introduction%20to%20Matplotlib.html>`_
+.. * `Files and paths <_static/12.%20Files%20and%20paths.html>`_
+.. * `String formatting <_static/13.%20String%20Formatting.html>`_
+..
+.. * Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
+..
+.. * `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
+..
+.. Thursday
+.. ^^^^^^^^
+..
+.. **Download Notebooks:** `tar file <_static/py4sci_thu.tgz>`__ - `zip file <_static/py4sci_thu.zip>`__
+..
+.. * `Python variables - behind the scenes <_static/14.%20Python%20variables%20-%20benind%20the%20scenes.html>`_
+.. * `Introduction to Scipy: Fitting data <_static/15.%20Fitting%20models%20to%20data.html>`_
+.. * `Introduction to Scipy: Interpolation and Integration <_static/16.%20Interpolation%20and%20Integration.html>`_
+.. * `Understanding Python Errors <_static/17.%20Understanding%20Python%20errors.html>`_
+..
+.. * Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
+..
+.. * `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Tuesday 31st 19:00)
+..
+.. Friday
+.. ^^^^^^
+..
+.. **Download Notebooks:** `tar file <_static/py4sci_fri.tgz>`__ - `zip file <_static/py4sci_fri.zip>`__
+..
+.. * `Accessing remote resources <_static/18.%20Accessing%20remote%20resources.html>`_
+.. * `Object-oriented programming <_static/19.%20Object-oriented%20programming.html>`_
+..
+.. * Practice: `Map of temperatures <_static/Practice%20Problem%20-%20Map%20of%20temperatures%20over%20Germany.html>`_ (`solution <_static/Practice%20Problem%20-%20Map%20of%20Temperatures%20over%20Germany%20-%20Sample%20Solution.html>`__)
 
 Beyond the course
 ^^^^^^^^^^^^^^^^^
 
-* `Bonus Problem Set <_static/Bonus%20Problem%20Set.html>`_
+.. * `Bonus Problem Set <_static/Bonus%20Problem%20Set.html>`_
+
 * Evaluate your Python skills: `CodeEval <https://www.codeeval.com/>`_
 * Bioinformatics Python problems: `Rosalind <http://rosalind.info/problems/locations/>`_
