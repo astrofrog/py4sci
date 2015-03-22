@@ -97,12 +97,15 @@ class BuildNotes(Command):
     def run(self):
 
         import os
+        import sys
         import shutil
         import tempfile
 
         from IPython.nbconvert.nbconvertapp import NbConvertApp
 
-        import sys
+        self.reinitialize_command('run', inplace=True)
+        self.run_command('run')
+
         for arg in range(len(sys.argv[1:])):
             sys.argv.pop(-1)
 
@@ -118,6 +121,7 @@ class BuildNotes(Command):
         for notebook in (glob.glob('lectures/*.ipynb')
                         + glob.glob('problems/*.ipynb')
                         + glob.glob('practice/*.ipynb')):
+            print("Rendering {0}...".format(notebook))
             app.notebooks = [notebook]
             app.output_base = os.path.join('www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
             app.start()
@@ -207,12 +211,13 @@ class RunNotes(Command):
         for notebook in (glob.glob('lectures/*.ipynb')
                         + glob.glob('problems/*.ipynb')
                         + glob.glob('practice/*.ipynb')):
-            if "Understanding" in notebook:
-                continue
+            print("Running {0}...".format(notebook))
             os.chdir(os.path.dirname(notebook))
-            r = NotebookRunner(read(open(os.path.basename(notebook)), 'json'), pylab=False)
+            with open(os.path.basename(notebook)) as f:
+                r = NotebookRunner(read(f, 'json'), pylab=False)
             r.run_notebook(skip_exceptions=True)
-            write(r.nb, open(os.path.basename(notebook), 'w'), 'json')
+            with open(os.path.basename(notebook), 'w') as f:
+                write(r.nb, f, 'json')
             os.chdir(start_dir)
 
 
