@@ -52,7 +52,7 @@ class BuildTOC(Command):
         with open('www/index.rst', 'w') as f:
             f.write(template.format(lectures_toc=toc))
 
-class LiveVersion(Command):
+class ClearOutput(Command):
 
     user_options = []
 
@@ -63,10 +63,6 @@ class LiveVersion(Command):
         pass
 
     def run(self):
-
-        if os.path.exists('live_version'):
-            shutil.rmtree('live_version')
-        os.mkdir('live_version')
 
         from IPython.nbformat.current import read, write
 
@@ -81,8 +77,10 @@ class LiveVersion(Command):
                 for cell in ws.cells:
                     if cell.cell_type == 'code':
                         cell.outputs = []
+                        if 'prompt_number' in cell:
+                            cell.pop('prompt_number')
 
-            with open(os.path.join('live_version', os.path.basename(notebook)), 'w') as f:
+            with open(notebook, 'w') as f:
                 write(nb, f, 'json')
 
 
@@ -218,4 +216,4 @@ class RunNotes(Command):
             os.chdir(start_dir)
 
 
-setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes, 'live':LiveVersion, 'toc': BuildTOC})
+setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes, 'clear':ClearOutput, 'toc': BuildTOC})
