@@ -18,6 +18,8 @@ Information
 Monday
 ^^^^^^
 
+**Download Notebooks:** `tar file <_static/py4sci_mon.tgz>`__ - `zip file <_static/py4sci_mon.zip>`__
+
 * `Running Python code <_static/02.%20How%20to%20run%20Python%20code.html>`_
 * `Using the IPython notebook <_static/03.%20Using%20the%20IPython%20notebook.html>`_
 * `Numbers, Strings, and Lists <_static/04.%20Numbers%2C%20String%2C%20and%20Lists.html>`_
@@ -29,6 +31,8 @@ Monday
 Tuesday
 ^^^^^^^
 
+**Download Notebooks:** `tar file <_static/py4sci_tue.tgz>`__ - `zip file <_static/py4sci_tue.zip>`__
+
 * `Functions <_static/07.%20Functions.html>`_
 * `Reading and Writing files <_static/08.%20Reading%20and%20writing%20files.html>`_
 * `Modules and Variable Scope <_static/09.%20Modules%20and%20Variable%20Scope.html>`_
@@ -39,6 +43,8 @@ Tuesday
 
 Wednesday
 ^^^^^^^^^
+
+**Download Notebooks:** `tar file <_static/py4sci_wed.tgz>`__ - `zip file <_static/py4sci_wed.zip>`__
 
 * `Introduction to Numpy <_static/10.%20Introduction%20to%20Numpy.html>`_
 * `Introduction to Matplotlib <_static/11.%20Introduction%20to%20Matplotlib.html>`_
@@ -52,6 +58,8 @@ Wednesday
 Thursday
 ^^^^^^^^
 
+**Download Notebooks:** `tar file <_static/py4sci_thu.tgz>`__ - `zip file <_static/py4sci_thu.zip>`__
+
 * `Python variables - behind the scenes <_static/14.%20Python%20variables%20-%20benind%20the%20scenes.html>`_
 * `Introduction to Scipy: Fitting data <_static/15.%20Fitting%20models%20to%20data.html>`_
 * `Introduction to Scipy: Interpolation and Integration <_static/16.%20Interpolation%20and%20Integration.html>`_
@@ -63,6 +71,8 @@ Thursday
 
 Friday
 ^^^^^^
+
+**Download Notebooks:** `tar file <_static/py4sci_fri.tgz>`__ - `zip file <_static/py4sci_fri.zip>`__
 
 * `Accessing remote resources <_static/18.%20Accessing%20remote%20resources.html>`_
 * `Object-oriented programming <_static/19.%20Object-oriented%20programming.html>`_
