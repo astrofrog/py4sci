@@ -66,9 +66,7 @@ class ClearOutput(Command):
 
         from IPython.nbformat.current import read, write
 
-        for notebook in (glob.glob('lectures/*.ipynb')
-                        + glob.glob('problems/*.ipynb')
-                        + glob.glob('practice/*.ipynb')):
+        for notebook in glob.glob('?.???/*.ipynb'):
 
             with open(notebook, 'r') as f:
                 nb = read(f, 'json')
@@ -118,9 +116,7 @@ class BuildNotes(Command):
         app = NbConvertApp()
         app.initialize()
         app.export_format = 'html'
-        for notebook in (glob.glob('lectures/*.ipynb')
-                        + glob.glob('problems/*.ipynb')
-                        + glob.glob('practice/*.ipynb')):
+        for notebook in glob.glob('?.???/*.ipynb'):
             print("Rendering {0}...".format(notebook))
             app.notebooks = [notebook]
             app.output_base = os.path.join('www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
@@ -129,9 +125,7 @@ class BuildNotes(Command):
         data_dir = os.path.join('www', '_static', 'data')
         if not os.path.exists(data_dir):
             os.mkdir(data_dir)
-        for data_file in (glob.glob('lectures/data/*')
-                           + glob.glob('problems/data/*')
-                           + glob.glob('practice/data/*')):
+        for data_file in glob.glob('lectures/data/*.ipynb'):
             shutil.copy2(data_file, data_dir)
 
 
@@ -208,9 +202,7 @@ class RunNotes(Command):
 
         start_dir = os.path.abspath('.')
 
-        for notebook in (glob.glob('lectures/*.ipynb')
-                        + glob.glob('problems/*.ipynb')
-                        + glob.glob('practice/*.ipynb')):
+        for notebook in glob.glob('?.???/*.ipynb'):
             print("Running {0}...".format(notebook))
             os.chdir(os.path.dirname(notebook))
             with open(os.path.basename(notebook)) as f:
