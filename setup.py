@@ -125,8 +125,6 @@ class BuildNotes(Command):
         data_dir = os.path.join('www', '_static', 'data')
         if not os.path.exists(data_dir):
             os.mkdir(data_dir)
-        for data_file in glob.glob('lectures/data/*.ipynb'):
-            shutil.copy2(data_file, data_dir)
 
 
 class DeployNotes(Command):
