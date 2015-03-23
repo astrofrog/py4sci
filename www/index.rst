@@ -14,7 +14,7 @@ Information
 * `About the course <_static/00.%20About%20the%20course.html>`_
 * `What is Python? <_static/01.%20What%20is%20Python.html>`_
 
-.. * `Exercise solutions <_static/Exercise%20Solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Exercise%20Solutions.html>`_ (updated during course)
 
 Monday
 ^^^^^^
@@ -29,19 +29,19 @@ Monday
 
 * Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
 
-.. Tuesday
-.. ^^^^^^^
-..
-.. **Download Notebooks:** `tar file <_static/py4sci_tue.tgz>`__ - `zip file <_static/py4sci_tue.zip>`__
-..
-.. * `Functions <_static/07.%20Functions.html>`_
-.. * `Reading and Writing files <_static/08.%20Reading%20and%20writing%20files.html>`_
-.. * `Modules and Variable Scope <_static/09.%20Modules%20and%20Variable%20Scope.html>`_
-..
-.. * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
-..
-.. * `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
-..
+Tuesday
+^^^^^^^
+
+**Download Notebooks:** `tar file <_static/py4sci_tue.tgz>`__ - `zip file <_static/py4sci_tue.zip>`__
+
+* `Functions <_static/07.%20Functions.html>`_
+* `Reading and Writing files <_static/08.%20Reading%20and%20writing%20files.html>`_
+* `Modules and Variable Scope <_static/09.%20Modules%20and%20Variable%20Scope.html>`_
+
+* Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
+
+* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
+
 .. Wednesday
 .. ^^^^^^^^^
 ..

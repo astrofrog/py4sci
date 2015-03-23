@@ -7,11 +7,11 @@ tar czvhf www/_static/py4sci_mon.tgz --exclude="*Solution*" py4sci_mon
 zip -r9 www/_static/py4sci_mon.zip --exclude="*Solution*" py4sci_mon
 rm py4sci_mon
 
-# ln -s 1.mon py4sci_tue
-# tar czvhf www/_static/py4sci_tue.tgz --exclude="*Solution*"  py4sci_tue
-# zip -r9 www/_static/py4sci_tue.zip --exclude="*Solution*" py4sci_tue
-# rm py4sci_tue
-#
+ln -s 1.mon py4sci_tue
+tar czvhf www/_static/py4sci_tue.tgz --exclude="*Solution*"  py4sci_tue
+zip -r9 www/_static/py4sci_tue.zip --exclude="*Solution*" py4sci_tue
+rm py4sci_tue
+
 # ln -s 1.mon py4sci_wed
 # tar czvhf www/_static/py4sci_wed.tgz --exclude="*Solution*"  py4sci_wed
 # zip -r9 www/_static/py4sci_wed.zip --exclude="*Solution*" py4sci_wed
