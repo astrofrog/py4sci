@@ -13,8 +13,8 @@ zip -r9 www/_static/py4sci_tue.zip --exclude="*Solution*" py4sci_tue
 rm py4sci_tue
 
 ln -s 3.wed py4sci_wed
-tar czvhf www/_static/py4sci_wed.tgz --exclude="*Solution*"  py4sci_wed
-zip -r9 www/_static/py4sci_wed.zip --exclude="*Solution*" py4sci_wed
+tar czvhf www/_static/py4sci_wed.tgz --exclude="*Solution*" --exclude="*ice_data*"  py4sci_wed
+zip -r9 www/_static/py4sci_wed.zip --exclude="*Solution*" --exclude="*ice_data*" py4sci_wed
 rm py4sci_wed
 
 # ln -s 4.thu py4sci_thu
