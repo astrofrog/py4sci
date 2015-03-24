@@ -42,20 +42,20 @@ Tuesday
 
 * `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
 
-.. Wednesday
-.. ^^^^^^^^^
-..
-.. **Download Notebooks:** `tar file <_static/py4sci_wed.tgz>`__ - `zip file <_static/py4sci_wed.zip>`__
-..
-.. * `Introduction to Numpy <_static/10.%20Introduction%20to%20Numpy.html>`_
-.. * `Introduction to Matplotlib <_static/11.%20Introduction%20to%20Matplotlib.html>`_
-.. * `Files and paths <_static/12.%20Files%20and%20paths.html>`_
-.. * `String formatting <_static/13.%20String%20Formatting.html>`_
-..
-.. * Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
-..
-.. * `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
-..
+Wednesday
+^^^^^^^^^
+
+**Download Notebooks:** `tar file <_static/py4sci_wed.tgz>`__ - `zip file <_static/py4sci_wed.zip>`__
+
+* `Introduction to Numpy <_static/10.%20Introduction%20to%20Numpy.html>`_
+* `Introduction to Matplotlib <_static/11.%20Introduction%20to%20Matplotlib.html>`_
+* `Files and paths <_static/12.%20Files%20and%20paths.html>`_
+* `String formatting <_static/13.%20String%20Formatting.html>`_
+
+* Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
+
+* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
+
 .. Thursday
 .. ^^^^^^^^
 ..
