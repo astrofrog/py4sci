@@ -56,19 +56,19 @@ Wednesday
 
 * `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
 
-.. Thursday
-.. ^^^^^^^^
-..
-.. **Download Notebooks:** `tar file <_static/py4sci_thu.tgz>`__ - `zip file <_static/py4sci_thu.zip>`__
-..
-.. * `Python variables - behind the scenes <_static/14.%20Python%20variables%20-%20benind%20the%20scenes.html>`_
-.. * `Introduction to Scipy: Fitting data <_static/15.%20Fitting%20models%20to%20data.html>`_
-.. * `Introduction to Scipy: Interpolation and Integration <_static/16.%20Interpolation%20and%20Integration.html>`_
-.. * `Understanding Python Errors <_static/17.%20Understanding%20Python%20errors.html>`_
-..
-.. * Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
-..
-.. * `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Tuesday 31st 19:00)
+Thursday
+^^^^^^^^
+
+**Download Notebooks:** `tar file <_static/py4sci_thu.tgz>`__ - `zip file <_static/py4sci_thu.zip>`__
+
+* `Python variables - behind the scenes <_static/14.%20Python%20variables%20-%20benind%20the%20scenes.html>`_
+* `Introduction to Scipy: Fitting data <_static/15.%20Fitting%20models%20to%20data.html>`_
+* `Introduction to Scipy: Interpolation and Integration <_static/16.%20Interpolation%20and%20Integration.html>`_
+* `Understanding Python Errors <_static/17.%20Understanding%20Python%20errors.html>`_
+
+* Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
+
+* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Friday 3rd 19:00)
 ..
 .. Friday
 .. ^^^^^^

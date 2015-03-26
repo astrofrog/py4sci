@@ -17,11 +17,11 @@ tar czvhf www/_static/py4sci_wed.tgz --exclude="*Solution*" --exclude="*ice_data
 zip -r9 www/_static/py4sci_wed.zip --exclude="*Solution*" --exclude="*ice_data*" py4sci_wed
 rm py4sci_wed
 
-# ln -s 4.thu py4sci_thu
-# tar czvhf www/_static/py4sci_thu.tgz --exclude="*Solution*"  py4sci_thu
-# zip -r9 www/_static/py4sci_thu.zip --exclude="*Solution*" py4sci_thu
-# rm py4sci_thu
-#
+ln -s 4.thu py4sci_thu
+tar czvhf www/_static/py4sci_thu.tgz --exclude="*Solution*"  py4sci_thu
+zip -r9 www/_static/py4sci_thu.zip --exclude="*Solution*" py4sci_thu
+rm py4sci_thu
+
 # ln -s 5.fri py4sci_fri
 # tar czvhf www/_static/py4sci_fri.tgz --exclude="*Solution*"  py4sci_fri
 # zip -r9 www/_static/py4sci_fri.zip --exclude="*Solution*" py4sci_fri
