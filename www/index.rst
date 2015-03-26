@@ -70,15 +70,15 @@ Thursday
 
 * `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Friday 3rd 19:00)
 
-.. Friday
-.. ^^^^^^
-..
-.. **Download Notebooks:** `tar file <_static/py4sci_fri.tgz>`__ - `zip file <_static/py4sci_fri.zip>`__
-..
-.. * `Accessing remote resources <_static/18.%20Accessing%20remote%20resources.html>`_
-.. * `Object-oriented programming <_static/19.%20Object-oriented%20programming.html>`_
-..
-.. * Practice: `Map of temperatures <_static/Practice%20Problem%20-%20Map%20of%20temperatures%20over%20Germany.html>`_ (`solution <_static/Practice%20Problem%20-%20Map%20of%20Temperatures%20over%20Germany%20-%20Sample%20Solution.html>`__)
+Friday
+^^^^^^
+
+**Download Notebooks:** `tar file <_static/py4sci_fri.tgz>`__ - `zip file <_static/py4sci_fri.zip>`__
+
+* `Accessing remote resources <_static/18.%20Accessing%20remote%20resources.html>`_
+* `Object-oriented programming <_static/19.%20Object-oriented%20programming.html>`_
+
+* Practice: `Map of temperatures <_static/Practice%20Problem%20-%20Map%20of%20temperatures%20over%20Germany.html>`_ (`solution <_static/Practice%20Problem%20-%20Map%20of%20Temperatures%20over%20Germany%20-%20Sample%20Solution.html>`__)
 
 Beyond the course
 ^^^^^^^^^^^^^^^^^
