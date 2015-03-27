@@ -15,6 +15,7 @@ Information
 * `What is Python? <_static/01.%20What%20is%20Python.html>`_
 
 * `Exercise solutions <_static/Exercise%20Solutions.html>`_ (updated during course)
+* `Additional notes <_static/Additional%20Notes.html>`_ (updated during course)
 
 Monday
 ^^^^^^
