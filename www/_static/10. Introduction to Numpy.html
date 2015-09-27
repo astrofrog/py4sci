@@ -3113,8 +3113,8 @@ array([  0.00000000e+00,   6.42787610e-01,   9.84807753e-01,
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-array([ 0.83310431,  0.32368933,  0.00815901,  0.38937763,  0.3499559 ,
-        0.29057374,  0.47429514,  0.11931301,  0.84560573,  0.02427975])
+array([ 0.93478066,  0.04062205,  0.06977021,  0.03127236,  0.25901526,
+        0.92801108,  0.24946646,  0.82871096,  0.85916398,  0.92049771])
 </pre>
 </div>
 
@@ -3146,8 +3146,8 @@ array([ 0.83310431,  0.32368933,  0.00815901,  0.38937763,  0.3499559 ,
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-array([ 3.066202  ,  4.30979044,  3.77236474,  4.21727245,  2.8075398 ,
-        3.59974335,  2.24174284,  0.80596472,  2.16463916,  3.49705134])
+array([ 2.11750326,  2.85565594,  2.30158405,  3.9411581 ,  4.31597061,
+        3.18278369,  2.49214035,  4.10750388,  2.7574274 ,  3.02234576])
 </pre>
 </div>
 
@@ -3777,6 +3777,202 @@ array([1, 0, 4, 0, 0, 3, 1, 5, 0, 0, 3, 4, 4, 3])
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="NaN-values">NaN values<a class="anchor-link" href="#NaN-values">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In arrays, some of the values are sometimes NaN - meaning <em>Not a Number</em>. If you multiply a NaN value by another value, you get NaN, and if there are any NaN values in a summation, the total result will be NaN. One way to get around this is to use <code>np.nansum</code> instead of <code>np.sum</code> in order to find the sum:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[64]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+6.0
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[65]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+3.0
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also use <code>np.isnan</code> to tell you where values are NaN. For example, <code>array[~np.isnan(array)]</code> will return all the values that are not NaN (because ~ means &#39;not&#39;):</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[66]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([False, False, False,  True], dtype=bool)
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[67]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([ nan])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">x</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[68]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([ 1.,  2.,  3.])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2>
 </div>
 </div>
@@ -3793,7 +3989,7 @@ array([1, 0, 4, 0, 0, 3, 1, 5, 0, 0, 3, 4, 4, 3])
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="o">!</span>head data/munich_temperatures_average_with_bad_data.txt  # shows the <span class="m">10</span> first lines of a file
@@ -3840,7 +4036,7 @@ array([1, 0, 4, 0, 0, 3, 1, 5, 0, 0, 3, 4, 4, 3])
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight"><pre><span class="c"># your solution here</span>

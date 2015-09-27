@@ -1783,7 +1783,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To start off, we want to see whether the star does indeed show periodic variations, and if so, we want to measure the period and amplitude.</p>
-<p><strong>Read in the data and make a plot of the radial velocity in the file</strong> (make sure you include axis labels, units, and error bars!).</p>
+<p><strong>Read in the data and make a plot of the radial velocity versus time in the file</strong> (make sure you include axis labels, units, and error bars!).</p>
 <p>As you will see, the observations were not taken with equal spacing in time, and it does not look like we can easily see any periodic variations in the curve by eye, so we will instead use an automated method. The best way to find the period of a time series like this is to use a periodogram algorithm. One algorithm that works well in cases like this is the following:</p>
 <ul>
 <li><p>pick a <code>period</code></p>
@@ -1853,11 +1853,25 @@ div#notebook {
 <li><p>the viewing angle can be anywhere between 0 and 90 degrees. However, one cannot simply sample $i$ randomly between 0 and 90 because some viewing angles are more likely than others - to do it properly you need to sample $\cos{i}$ uniformly between 0 and 1, then derive $i$ or $\sin{i}$ from this.</p>
 </li>
 </ul>
+<p><strong>Note:</strong> For more information on doing a Monte-Carlo error propagation, see the Practice Problem and associated solution for Wednesday!</p>
 <p>From the Monte-Carlo simulation, <strong>plot a histogram</strong> of the probability that the object has a certain mass, and show only the range from 0 to 13 times the mass of Jupiter.</p>
 <p><strong>What is the (numerical) probability that the object is less massive than 13 times the mass of Jupiter?</strong> (this is usually considered to be the upper limit for the mass of a planet). What degree of confidence do we have that the object is a planet, using the 1/2/3/4/5-sigma confidence terminology? (see <a href="http://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">here</a> for more information).</p>
 <p>Based on this, what can you conclude about the object?</p>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
