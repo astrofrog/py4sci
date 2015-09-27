@@ -58,7 +58,7 @@ Wednesday
 
 * `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 2nd October at 19:00)
 
-* `Exercise solutions <_static/Wendesday%20Exercise%20Solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Wednesday%20Exercise%20Solutions.html>`_ (updated during course)
 
 
 Thursday
