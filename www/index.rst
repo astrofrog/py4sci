@@ -14,9 +14,6 @@ Information
 * `About the course <_static/00.%20About%20the%20course.html>`_
 * `What is Python? <_static/01.%20What%20is%20Python.html>`_
 
-* `Exercise solutions <_static/Exercise%20Solutions.html>`_ (updated during course)
-* `Additional notes <_static/Additional%20Notes.html>`_ (updated during course)
-
 Monday
 ^^^^^^
 
@@ -30,6 +27,8 @@ Monday
 
 * Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
 
+* `Exercise solutions <_static/Monday%20Exercise%20Solutions.html>`_ (updated during course)
+
 Tuesday
 ^^^^^^^
 
@@ -42,6 +41,8 @@ Tuesday
 * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
 
 * `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
+
+* `Exercise solutions <_static/Tuesday%20Exercise%20Solutions.html>`_ (updated during course)
 
 Wednesday
 ^^^^^^^^^
@@ -57,6 +58,9 @@ Wednesday
 
 * `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
 
+* `Exercise solutions <_static/Wendesday%20Exercise%20Solutions.html>`_ (updated during course)
+
+
 Thursday
 ^^^^^^^^
 
@@ -71,6 +75,9 @@ Thursday
 
 * `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Friday 3rd 19:00)
 
+* `Exercise solutions <_static/Thursday%20Exercise%20Solutions.html>`_ (updated during course)
+
+
 Friday
 ^^^^^^
 
@@ -81,10 +88,10 @@ Friday
 
 * Practice: `Map of temperatures <_static/Practice%20Problem%20-%20Map%20of%20temperatures%20over%20Germany.html>`_ (`solution <_static/Practice%20Problem%20-%20Map%20of%20Temperatures%20over%20Germany%20-%20Sample%20Solution.html>`__)
 
+* `Exercise solutions <_static/Friday%20Exercise%20Solutions.html>`_ (updated during course)
+
 Beyond the course
 ^^^^^^^^^^^^^^^^^
-
-.. * `Bonus Problem Set <_static/Bonus%20Problem%20Set.html>`_
 
 * Evaluate your Python skills: `CodeEval <https://www.codeeval.com/>`_
 * Bioinformatics Python problems: `Rosalind <http://rosalind.info/problems/locations/>`_
