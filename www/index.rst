@@ -1,9 +1,9 @@
 Python for Scientists
 =====================
 
-Welcome to the lecture notes for the Python: Programming for Scientists course
-at the university of Heidelberg! This block course runs from the 23nd to the
-27th of March 2015.
+Welcome to the lecture notes for the Python: Programming for Scientists
+course at the university of Heidelberg! This block course runs from the
+28th of September to the 2nd of October 2015.
 
 Lecture Notes
 -------------
@@ -40,7 +40,7 @@ Tuesday
 
 * Practice: `Temperature statistics <_static/Practice%20Problem%20-%20Temperatures.html>`_ (`solution <_static/Practice%20Problem%20-%20Temperatures%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 25th 19:00)
+* `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 30th September at 19:00)
 
 * `Exercise solutions <_static/Tuesday%20Exercise%20Solutions.html>`_ (updated during course)
 
@@ -56,7 +56,7 @@ Wednesday
 
 * Practice: `Monte-Carlo Error Propagation <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation.html>`_ (`solution <_static/Practice%20Problem%20-%20Monte-Carlo%20Error%20Propagation%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 27th 19:00)
+* `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 2nd October at 19:00)
 
 * `Exercise solutions <_static/Wendesday%20Exercise%20Solutions.html>`_ (updated during course)
 
@@ -73,7 +73,7 @@ Thursday
 
 * Practice: `Radioactive Decay <_static/Practice%20Problem%20-%20Radioactive%20Decay.html>`_ (`solution <_static/Practice%20Problem%20-%20Radioactive%20Decay%20-%20Sample%20Solution.html>`__)
 
-* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Friday 3rd 19:00)
+* `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Friday 9th October at 19:00)
 
 * `Exercise solutions <_static/Thursday%20Exercise%20Solutions.html>`_ (updated during course)
 
