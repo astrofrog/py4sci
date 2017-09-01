@@ -11,12 +11,14 @@ information about the license, see the following page:
 
   http://creativecommons.org/licenses/by-nc-sa/3.0/
 
-Format
-------
+You can launch an interactive version of the lecture notes by clicking on the following button: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/astrofrog/py4sci) (once the Jupyter hub has started up, go to the ``1.mon`` folder and click on the first lecture note)
 
-The notes were prepared in the IPython Notebook using Python 3.4. They are
+Details
+-------
+
+The notes were prepared in the Jupyter Notebook using Python 3.4. They are
 currently fully compatible with Python 3. To edit or view the notes, start up
-the IPython notebook in the directory containing the file you are interested
+the Jupyter notebook in the directory containing the file you are interested
 in. Alternatively, you can use the IPython Notebook Viewer at:
 
   http://nbviewer.ipython.org
