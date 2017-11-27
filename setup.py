@@ -64,12 +64,12 @@ class ClearOutput(Command):
 
     def run(self):
 
-        from IPython.nbformat.current import read, write
+        from nbformat.v4 import reads, writes
 
         for notebook in glob.glob('?.???/*.ipynb'):
 
             with open(notebook, 'r') as f:
-                nb = read(f, 'json')
+                nb = reads(f.read())
 
             for ws in nb.worksheets:
                 for cell in ws.cells:
@@ -79,7 +79,7 @@ class ClearOutput(Command):
                             cell.pop('prompt_number')
 
             with open(notebook, 'w') as f:
-                write(nb, f, 'json')
+                f.write(writes(nb))
 
 
 class BuildNotes(Command):
