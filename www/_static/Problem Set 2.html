@@ -11783,20 +11783,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Total points:</strong> 30</p>
-<p><strong>Due:</strong> Friday 2nd October 19:00</p>
-<p><strong>Format:</strong> IPython Notebook</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>The purpose of this problem set is to become familiar with working with image data, plotting it, and combining it in various ways for analysis.</p>
 <p>The data used in this problem set was collected by the AMSR-E instrument <a href="http://en.wikipedia.org/wiki/Aqua_%28satellite%29">Aqua</a> satellite. The data consists of maps of the concentration of ice in the Arctic collected between 2006 and 2011. I have downloaded and extracted the maps from <a href="http://www.iup.uni-bremen.de/seaice/amsr/">here</a> and have put them in a format that you can more easily used (if you are interested in using the raw data directly, let me know and I can show you).</p>
-<p>The data you should is in the <a href="data/ice_data.tgz">data/ice_data.tgz</a> file (on Windows you can use the <a href="data/ice_data.zip">data/ice_data.zip</a> file) and can also be accessed in <code>/local/py4sci/ice_data</code> if you are using the CIP computers (no need to copy over that directory, just read the files from there). This is actually a subset of the data, with only two ice maps every month, but let me know if you are interested in getting the full dataset.</p>
+<p>The data you should is in the <a href="data/ice_data.tgz">data/ice_data.tgz</a> file (on Windows you can use the <a href="data/ice_data.zip">data/ice_data.zip</a> file). This is actually a subset of the data, with only two ice maps every month.</p>
 <p>The data is in 'Numpy' format, which means that you can read it as a Numpy array using:</p>
 
 <pre><code>&gt;&gt;&gt; import numpy as np
@@ -11852,7 +11841,7 @@ div#notebook {
 
 </code></pre>
 <p><strong>Describe what you see in the plot</strong>.</p>
-<p>We now want something a little more quantitative than just the number of pixels, so we will try and compute the area where the ice concentration is above a given threshold. However, we first need to know the area of the pixels in the image, and since we are looking at a projection of a spherical surface, each pixel will be a different area. The areas (in km^2) are contained inside the file named <code>ice_data_area.npy</code> (if you are using the CIP pool, this is <code>/local/py4sci/ice_data_area.npy</code>). <strong>Read in the areas and make a plot (with colorbar) to see how the pixel area is changing over the image.</strong></p>
+<p>We now want something a little more quantitative than just the number of pixels, so we will try and compute the area where the ice concentration is above a given threshold. However, we first need to know the area of the pixels in the image, and since we are looking at a projection of a spherical surface, each pixel will be a different area. The areas (in km^2) are contained inside the file named <code>ice_data_area.npy</code>. <strong>Read in the areas and make a plot (with colorbar) to see how the pixel area is changing over the image.</strong></p>
 <p>Now, loop over the files again as before, but this time, for each file, <strong>compute the total area where the concentration of ice is 99% or above. Make a new plot showing the area of &gt;99% ice concentration against time.</strong></p>
 <p><strong>Describe what you see - how does the minimum change over time?</strong></p>
 
