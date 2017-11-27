@@ -27,7 +27,7 @@ Monday
 
 * Practice: `Simple Cryptography <_static/Practice%20Problem%20-%20Cryptography.html>`_ (`solution <_static/Practice%20Problem%20-%20Cryptography%20-%20Sample%20Solution.html>`__)
 
-* `Exercise solutions <_static/Monday%20Exercise%20Solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Monday%20Exercise%20Solutions.html>`__ (updated during course)
 
 Tuesday
 ^^^^^^^
@@ -42,7 +42,7 @@ Tuesday
 
 * `Problem Set 1 <_static/Problem%20Set%201.html>`_ (due Wednesday 30th September at 19:00)
 
-* `Exercise solutions <_static/Tuesday%20Exercise%20Solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Tuesday%20Exercise%20Solutions.html>`__ (updated during course)
 
 Wednesday
 ^^^^^^^^^
@@ -58,7 +58,7 @@ Wednesday
 
 * `Problem Set 2 <_static/Problem%20Set%202.html>`_ (due Friday 2nd October at 19:00)
 
-* `Exercise solutions <_static/Wednesday%20Exercise%20Solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Wednesday%20Exercise%20Solutions.html>`__ (updated during course)
 
 
 Thursday
@@ -75,7 +75,7 @@ Thursday
 
 * `Problem Set 3 <_static/Problem%20Set%203.html>`_ (due Friday 9th October at 19:00)
 
-* `Exercise solutions <_static/Thursday%20Exercise%20Solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Thursday%20Exercise%20Solutions.html>`__ (updated during course)
 
 
 Friday
@@ -88,7 +88,7 @@ Friday
 
 * Practice: `Map of temperatures <_static/Practice%20Problem%20-%20Map%20of%20temperatures%20over%20Germany.html>`_ (`solution <_static/Practice%20Problem%20-%20Map%20of%20Temperatures%20over%20Germany%20-%20Sample%20Solution.html>`__)
 
-* `Exercise solutions <_static/Friday%20Exercise%20Solutions.html>`_ (updated during course)
+* `Exercise solutions <_static/Friday%20Exercise%20Solutions.html>`__ (updated during course)
 
 Beyond the course
 ^^^^^^^^^^^^^^^^^
