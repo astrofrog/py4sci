@@ -96,8 +96,6 @@ class BuildNotes(Command):
 
         import os
         import sys
-        import shutil
-        import tempfile
 
         from IPython.nbconvert.nbconvertapp import NbConvertApp
 
@@ -119,7 +117,7 @@ class BuildNotes(Command):
         for notebook in glob.glob('?.???/*.ipynb'):
             print("Rendering {0}...".format(notebook))
             app.notebooks = [notebook]
-            app.output_base = os.path.join('www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
+            app.output_base = os.path.join('..', 'www', '_static', os.path.basename(notebook.replace('.ipynb', '')))
             app.start()
 
         data_dir = os.path.join('www', '_static', 'data')
@@ -209,6 +207,11 @@ class RunNotes(Command):
             with open(os.path.basename(notebook), 'w') as f:
                 write(r.nb, f, 'json')
             os.chdir(start_dir)
+            r.shutdown_kernel()
 
 
-setup(name='py4sci', cmdclass={'run':RunNotes, 'build': BuildNotes, 'deploy':DeployNotes, 'clear':ClearOutput, 'toc': BuildTOC})
+setup(name='py4sci', cmdclass={'run': RunNotes,
+                               'build': BuildNotes,
+                               'deploy': DeployNotes,
+                               'clear': ClearOutput,
+                               'toc': BuildTOC})
