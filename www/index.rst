@@ -1,9 +1,11 @@
 Python for Scientists
 =====================
 
-Welcome to the lecture notes for the Python: Programming for Scientists
-course at the university of Heidelberg! This block course runs from
-28th September to 2nd October 2015.
+These are the lecture notes for a Python: Programming for Scientists
+course that was given at the University of Heidelberg by Thomas
+Robitaille between 2012 and 2015. The notes are licensed under the
+`Attribution Non-Commercial Share-Alike Creative Commons License
+<http://creativecommons.org/licenses/by-nc-sa/3.0/>`_.
 
 Lecture Notes
 -------------
