@@ -10,17 +10,12 @@ Robitaille between 2012 and 2015. The notes are licensed under the
 Lecture Notes
 -------------
 
-Information
-^^^^^^^^^^^
-
-* `About the course <_static/00.%20About%20the%20course.html>`_
-* `What is Python? <_static/01.%20What%20is%20Python.html>`_
-
 Monday
 ^^^^^^
 
 **Download Notebooks:** `tar file <_static/py4sci_mon.tgz>`__ - `zip file <_static/py4sci_mon.zip>`__
 
+* `What is Python? <_static/01.%20What%20is%20Python.html>`_
 * `Running Python code <_static/02.%20How%20to%20run%20Python%20code.html>`_
 * `Using the IPython notebook <_static/03.%20Using%20the%20IPython%20notebook.html>`_
 * `Numbers, Strings, and Lists <_static/04.%20Numbers%2C%20String%2C%20and%20Lists.html>`_
