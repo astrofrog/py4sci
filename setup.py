@@ -64,22 +64,21 @@ class ClearOutput(Command):
 
     def run(self):
 
-        from nbformat.v4 import reads, writes
+        from nbformat import read, write
 
         for notebook in glob.glob('?.???/*.ipynb'):
 
             with open(notebook, 'r') as f:
-                nb = reads(f.read())
+                nb = read(f, 4)
 
-            for ws in nb.worksheets:
-                for cell in ws.cells:
-                    if cell.cell_type == 'code':
-                        cell.outputs = []
-                        if 'prompt_number' in cell:
-                            cell.pop('prompt_number')
+            for cell in nb['cells']:
+                if cell.cell_type == 'code':
+                    cell.outputs = []
+                    if 'prompt_number' in cell:
+                        cell.pop('prompt_number')
 
             with open(notebook, 'w') as f:
-                f.write(writes(nb))
+                write(nb, f)
 
 
 class BuildNotes(Command):
